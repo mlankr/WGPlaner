@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">WGPlaner</string>
+    <string name="headerText">WG Planer</string>
+    <string name="title">Dashboard</string>
+    <string name="button1">Aufgabe anzeigen</string>
+    <string name="button2">Offene Aufgaben</string>
+    <string name="button3">Karma Statistik</string>
+    <string name="button4">Einkaufliste anzeigen</string>
+    <string name="button5">WG erstellen</string>
+    <string name="button6">Konto löschen</string>
+    <string name="button7">Userverwaltung</string>
+    <string name="button8">Abmelden</string>
+    <string name="button9">Aufgabe erstellen</string>
+
+    <string name="button10">Filtern</string>
+    <string name="button11">Alle Aufgaben</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="aufgabeAnzeigen">Aufgabe anzeigen</string>
+
+    <string name="filtern">Filtern</string>
+    <string name="filterText">Filter Kriterien</string>
+    <string name="suchbegriff">Suchbegriff</string>
+    <string name="alleAufgaben">Alle Aufgaben</string>
+    <string name="nichtZugeordnet">nicht zugeordnet</string>
+    <string name="aufgabenGeordnet">Aufgabe geordnet zu..</string>
+    <string name="aufgabeMitOhneTermin">Aufgabe mit/ohne Termin</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="bezeichnung">Bezeichnung</string>
+    <string name="erledigt">Erledigt</string>
+    <string name="zugeordnet">Zugeordnet</string>
+    <string name="karmapunkte">Karmapunkte</string>
+
+
+    <string name="benutzerAuswaehlen">Bitte Mietbewohner auswählen</string>
+    <string name="bestaetigen">Bestätigen</string>
+    <string name="ergebnis">Ergebnis</string>
+
+
+    <string name="wgErstellen">WG erstellen</string>
+    <string name="wgName">WG Name</string>#
+
+
+    <string name="mitgliedHinzufuegen">Mitglied hinzufügen</string>
+    <string name="vorname">Vorname</string>
+    <string name="nachname">Nachname</string>
+    <string name="email">E-mail Adresse</string>
+
+    <dimen name="padding_checkbox">30dp</dimen>
+
+    <string name="version">version 1.0.0</string>
+</resources>

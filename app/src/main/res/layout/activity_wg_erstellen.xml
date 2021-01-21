@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".controller.WGErstellenActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/wgErstelenToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/orange"
+        android:theme="?attr/actionBarTheme" />
+
+    <TextView
+        android:id="@+id/wgErstellenTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="@string/wgErstellen"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
+    <ImageView
+        android:id="@+id/wgImage"
+        android:layout_width="60dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        app:srcCompat="@drawable/ic_apartment" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/wgErstellenField"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/wgImage"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="@string/wgName"
+        android:paddingTop="5dp"
+        app:boxStrokeColor="@color/black"
+        app:boxStrokeWidthFocused="1dp"
+        app:hintAnimationEnabled="false"
+        app:hintTextColor="@color/orange">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/bezeichnungField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+            android:maxLines="1"
+            android:textSize="18sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/bestaetigenButton"
+        android:layout_width="170dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/wgErstellenField"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/bestaetigen"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:backgroundTint="@color/blue"
+        app:cornerRadius="15dp" />
+
+
+</RelativeLayout>

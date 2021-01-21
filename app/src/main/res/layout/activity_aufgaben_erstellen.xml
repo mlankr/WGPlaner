@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".controller.AufgabenErstellenActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/aufgabeAnzeigenToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/orange"
+        android:theme="?attr/actionBarTheme" />
+
+    <TextView
+        android:id="@+id/aufgabeAnzeigenView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="@string/aufgabeAnzeigen"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="75dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="80dp"
+                    app:srcCompat="@drawable/ic_name_card" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/bezeichnung"
+                    android:paddingTop="5dp"
+                    app:boxStrokeColor="@color/black"
+                    app:boxStrokeWidthFocused="1dp"
+                    app:hintAnimationEnabled="false"
+                    app:hintTextColor="@color/orange">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/bezeichnungField"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="true"
+                        android:maxLines="1"
+                        android:textSize="18sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="70dp"
+                    app:srcCompat="@drawable/ic_trophy" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/karmapunkte"
+                    android:paddingTop="5dp"
+                    app:boxStrokeColor="@color/black"
+                    app:boxStrokeWidthFocused="1dp"
+                    app:hintAnimationEnabled="false"
+                    app:hintTextColor="@color/orange">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/karmapunkteField"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="true"
+                        android:maxLines="1"
+                        android:textSize="18sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp">
+
+                <CheckBox
+                    android:id="@+id/erledigt"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/padding_checkbox"
+                    android:text="@string/erledigt"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/benutzerAuswaehlen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/benutzerAuswaehlen"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/dropDownBenutzer"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="5dp"
+                android:background="@android:drawable/btn_dropdown" />
+
+            <Button
+                android:id="@+id/bestaetigenButton"
+                android:layout_width="170dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                android:text="@string/bestaetigen"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                app:backgroundTint="@color/blue"
+                app:cornerRadius="15dp" />
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</RelativeLayout>

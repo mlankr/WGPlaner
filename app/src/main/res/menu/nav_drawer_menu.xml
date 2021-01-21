@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/mItem1"
+        android:title="@string/button1" />
+
+    <item
+        android:id="@+id/mItem2"
+        android:title="@string/button2" />
+    <item
+        android:id="@+id/mItem3"
+        android:title="@string/button3" />
+    <item
+        android:id="@+id/mItem4"
+        android:title="@string/button4" />
+    <item
+        android:id="@+id/mItem5"
+        android:title="@string/button5" />
+    <item
+        android:id="@+id/mItem6"
+        android:title="@string/button6" />
+    <item
+        android:id="@+id/mItem7"
+        android:title="@string/button7" />
+    <item
+        android:id="@+id/mItem8"
+        android:title="@string/button8" />
+
+</menu>

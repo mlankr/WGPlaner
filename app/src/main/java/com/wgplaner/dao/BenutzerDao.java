@@ -1,0 +1,72 @@
+package com.wgplaner.dao;
+
+
+import com.wgplaner.db.DBHelper;
+import com.wgplaner.db.DBService;
+import com.wgplaner.model.Benutzer;
+
+import java.sql.SQLException;
+import java.util.Collections;
+import java.util.List;
+
+public class BenutzerDao {
+
+    // Database helper class object to get the dao
+    private final DBService dbService = DBHelper.getDBService();
+
+    public int create(Benutzer benutzer) {
+        try {
+            return dbService.getBenutzerDao().create(benutzer);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    public Benutzer get(int id) {
+        try {
+            return dbService.getBenutzerDao().queryForId(id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
+    public boolean existsByName(String vorname) {
+        List<Benutzer> benutzerList = null;
+        try {
+            benutzerList = dbService.getBenutzerDao().queryForAll();
+            for (Benutzer b : benutzerList) {
+                if (vorname.toLowerCase() == b.getVorname().toLowerCase()) {
+                    return true;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+
+    public Benutzer getByEmail(String email) {
+        List<Benutzer> benutzerList = alleBenutzer();
+        for (Benutzer b : benutzerList) {
+            if (email.toLowerCase().equals(b.getEmailAdresse().toLowerCase())) {
+                return b;
+            }
+        }
+        return null;
+    }
+
+    public List<Benutzer> alleBenutzer() {
+        try {
+            return dbService.getBenutzerDao().queryForAll();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return Collections.emptyList();
+    }
+
+
+}
