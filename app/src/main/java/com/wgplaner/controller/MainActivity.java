@@ -7,11 +7,8 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.wgplaner.R;
-import com.wgplaner.dao.BenutzerDao;
-import com.wgplaner.dao.WGDao;
 import com.wgplaner.db.DBHelper;
-import com.wgplaner.model.Benutzer;
-import com.wgplaner.model.WG;
+
 
 import java.util.List;
 

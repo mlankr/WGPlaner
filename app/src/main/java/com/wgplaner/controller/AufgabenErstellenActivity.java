@@ -2,23 +2,12 @@ package com.wgplaner.controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.content.Context;
-import android.graphics.Rect;
+
 import android.os.Bundle;
-import android.text.Layout;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
-
-import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 import com.wgplaner.R;
 
 public class AufgabenErstellenActivity extends AppCompatActivity {
