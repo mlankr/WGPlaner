@@ -47,6 +47,20 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void wgErstellen(View view) {
+        Intent intent = new Intent(this, WGErstellenActivity.class);
+        startActivity(intent);
+    }
+
+    public void userVerwaltung(View view) {
+        Intent intent = new Intent(this, MitgliedHinzufuegenActivity.class);
+        startActivity(intent);
+    }
+
+    public void abmelden(View view) {
+        System.exit(1);
+    }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();

@@ -34,7 +34,7 @@
 
             <Button
                 android:id="@+id/button1"
-                android:layout_width="200dp"
+                android:layout_width="170dp"
                 android:layout_height="70dp"
                 android:layout_marginTop="24dp"
                 android:text="@string/button1"
@@ -45,7 +45,7 @@
 
             <Button
                 android:id="@+id/aufgabeErstellenButton"
-                android:layout_width="200dp"
+                android:layout_width="170dp"
                 android:layout_height="70dp"
                 android:layout_marginTop="24dp"
                 android:text="@string/button2"
@@ -55,7 +55,7 @@
 
             <Button
                 android:id="@+id/button3"
-                android:layout_width="200dp"
+                android:layout_width="170dp"
                 android:layout_height="70dp"
                 android:layout_marginTop="24dp"
                 android:text="@string/button3"
@@ -65,7 +65,7 @@
 
             <Button
                 android:id="@+id/button4"
-                android:layout_width="200dp"
+                android:layout_width="170dp"
                 android:layout_height="70dp"
                 android:layout_marginTop="24dp"
                 android:text="@string/button4"
@@ -75,17 +75,18 @@
 
             <Button
                 android:id="@+id/button5"
-                android:layout_width="200dp"
+                android:layout_width="170dp"
                 android:layout_height="70dp"
                 android:layout_marginTop="24dp"
                 android:text="@string/button5"
                 android:textSize="16sp"
                 app:cornerRadius="15dp"
-                app:backgroundTint="@color/blue" />
+                app:backgroundTint="@color/blue"
+                android:onClick="wgErstellen"/>
 
             <Button
                 android:id="@+id/button6"
-                android:layout_width="200dp"
+                android:layout_width="170dp"
                 android:layout_height="70dp"
                 android:layout_marginTop="24dp"
                 android:text="@string/button6"
@@ -95,23 +96,25 @@
 
             <Button
                 android:id="@+id/button7"
-                android:layout_width="200dp"
+                android:layout_width="170dp"
                 android:layout_height="70dp"
                 android:layout_marginTop="16dp"
                 android:text="@string/button7"
                 android:textSize="16sp"
                 app:cornerRadius="15dp"
-                app:backgroundTint="@color/blue" />
+                app:backgroundTint="@color/blue"
+                android:onClick="userVerwaltung"/>
 
             <Button
                 android:id="@+id/button8"
-                android:layout_width="200dp"
+                android:layout_width="170dp"
                 android:layout_height="70dp"
                 android:layout_marginTop="24dp"
                 android:text="@string/button8"
                 android:textSize="16sp"
                 app:cornerRadius="15dp"
-                app:backgroundTint="@color/blue" />
+                app:backgroundTint="@color/blue"
+                android:onClick="abmelden"/>
 
         </LinearLayout>
     </ScrollView>

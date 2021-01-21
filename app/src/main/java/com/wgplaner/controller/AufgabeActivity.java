@@ -63,4 +63,10 @@ public class AufgabeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AufgabenErstellenActivity.class);
         startActivity(intent);
     }
+
+    public void ergebnisAnzeigen(View view) {
+        Intent intent = new Intent(this, ErgebnisActivity.class);
+        startActivity(intent);
+    }
+
 }
