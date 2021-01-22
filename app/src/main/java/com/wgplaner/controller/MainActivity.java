@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v.getId() == R.id.button5) {
             Intent intent = new Intent(this, WGErstellenActivity.class);
             startActivity(intent);
+        } else if (v.getId() == R.id.button8) {
+            finish();
         } else {
             if (wg != null) {
                 if (v.getId() == R.id.button1) {
@@ -57,8 +59,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 } else if (v.getId() == R.id.button7) {
                     Intent mitgliedHinzufuegenActivity = new Intent(this, MitgliedHinzufuegenActivity.class);
                     startActivity(mitgliedHinzufuegenActivity);
-                } else if (v.getId() == R.id.button8) {
-                    finish();
                 } else {
                     Intent mitgliedHinzufuegenActivity = new Intent(this, NichtImplementiertActivity.class);
                     startActivity(mitgliedHinzufuegenActivity);
@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
     }
+
 
     @Override
     public void onResume() {

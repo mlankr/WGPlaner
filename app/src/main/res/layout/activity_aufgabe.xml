@@ -8,7 +8,6 @@
     tools:context=".controller.AufgabeActivity">
 
 
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/aufgabeAnzeigenToolbar"
         android:layout_width="match_parent"
@@ -32,15 +31,15 @@
         android:id="@+id/aufgabeErstellenButton"
         android:layout_width="170dp"
         android:layout_height="70dp"
-        android:layout_centerHorizontal="true"
         android:layout_below="@id/aufgabeAnzeigenToolbar"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
+        android:onClick="aufgabeErstellenAnzeigen"
         android:text="@string/button9"
         android:textAllCaps="false"
         android:textSize="16sp"
         app:backgroundTint="@color/blue"
-        app:cornerRadius="15dp"
-        android:onClick="aufgabeErstellenAnzeigen">
+        app:cornerRadius="15dp">
 
     </Button>
 
@@ -48,8 +47,8 @@
         android:id="@+id/dropDownFirst_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@id/aufgabeErstellenButton"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="80dp"
         android:layout_marginLeft="80dp"
         android:layout_marginTop="30dp"
@@ -62,24 +61,24 @@
         android:id="@+id/aufgabeZuordnung"
         android:layout_width="250dp"
         android:layout_height="45dp"
+        android:layout_below="@+id/dropDownFirst_top"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
-        android:layout_below="@+id/dropDownFirst_top"
         android:background="@android:drawable/btn_dropdown" />
 
     <Button
         android:id="@+id/filternButton"
         android:layout_width="170dp"
         android:layout_height="70dp"
+        android:layout_below="@id/aufgabeZuordnung"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp"
-        android:layout_below="@id/aufgabeZuordnung"
+        android:onClick="ergebnisAnzeigen"
         android:text="@string/filtern"
         android:textAllCaps="false"
         android:textSize="16sp"
         app:backgroundTint="@color/blue"
-        app:cornerRadius="15dp"
-        android:onClick="ergebnisAnzeigen"/>
+        app:cornerRadius="15dp" />
 
     <Button
         android:id="@+id/alleAufgaben"
@@ -88,11 +87,11 @@
         android:layout_below="@+id/filternButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
+        android:onClick="ergebnisAnzeigen"
         android:text="@string/alleAufgaben"
         android:textAllCaps="false"
         android:textSize="16sp"
         app:backgroundTint="@color/blue"
-        app:cornerRadius="15dp"
-        android:onClick="ergebnisAnzeigen"/>
+        app:cornerRadius="15dp" />
 
 </RelativeLayout>

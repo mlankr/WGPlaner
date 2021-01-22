@@ -52,6 +52,16 @@ public class Benutzer {
         this.karmapunkte = points;
     }
 
+    public Benutzer(String firstName, String lastName, String email, WG wg) {
+        this.vorname = firstName;
+        this.nachname = lastName;
+        this.emailAdresse = email;
+        this.passwort = "foo";
+        this.angemeldet = false;
+        this.wg = wg;
+        this.karmapunkte = 0;
+    }
+
     public boolean anmelden(String passwort) {
         if(passwort.equals(this.passwort)) {
             this.angemeldet = true;
