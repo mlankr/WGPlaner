@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,8 +11,8 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
         android:text="@string/title"
         android:textColor="@color/black"
         android:textSize="36sp"
@@ -22,14 +21,12 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="70dp">
+        android:layout_below="@+id/textView">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:gravity="center_horizontal|center_vertical"
-            android:layout_marginTop="100dp"
+            android:gravity="center_horizontal"
             android:orientation="vertical">
 
             <Button
@@ -39,19 +36,18 @@
                 android:layout_marginTop="24dp"
                 android:text="@string/button1"
                 android:textSize="16sp"
-                app:cornerRadius="15dp"
                 app:backgroundTint="@color/blue"
-                android:onClick="aufgabeAnzeigen"/>
+                app:cornerRadius="15dp" />
 
             <Button
-                android:id="@+id/aufgabeErstellenButton"
+                android:id="@+id/button2"
                 android:layout_width="200dp"
                 android:layout_height="70dp"
                 android:layout_marginTop="24dp"
                 android:text="@string/button2"
                 android:textSize="16sp"
-                app:cornerRadius="15dp"
-                app:backgroundTint="@color/blue" />
+                app:backgroundTint="@color/blue"
+                app:cornerRadius="15dp" />
 
             <Button
                 android:id="@+id/button3"
@@ -60,8 +56,8 @@
                 android:layout_marginTop="24dp"
                 android:text="@string/button3"
                 android:textSize="16sp"
-                app:cornerRadius="15dp"
-                app:backgroundTint="@color/blue" />
+                app:backgroundTint="@color/blue"
+                app:cornerRadius="15dp" />
 
             <Button
                 android:id="@+id/button4"
@@ -70,8 +66,8 @@
                 android:layout_marginTop="24dp"
                 android:text="@string/button4"
                 android:textSize="16sp"
-                app:cornerRadius="15dp"
-                app:backgroundTint="@color/blue" />
+                app:backgroundTint="@color/blue"
+                app:cornerRadius="15dp" />
 
             <Button
                 android:id="@+id/button5"
@@ -80,9 +76,9 @@
                 android:layout_marginTop="24dp"
                 android:text="@string/button5"
                 android:textSize="16sp"
-                app:cornerRadius="15dp"
                 app:backgroundTint="@color/blue"
-                android:onClick="wgErstellen"/>
+                app:cornerRadius="15dp" />
+
 
             <Button
                 android:id="@+id/button6"
@@ -91,8 +87,8 @@
                 android:layout_marginTop="24dp"
                 android:text="@string/button6"
                 android:textSize="16sp"
-                app:cornerRadius="15dp"
-                app:backgroundTint="@color/blue" />
+                app:backgroundTint="@color/blue"
+                app:cornerRadius="15dp" />
 
             <Button
                 android:id="@+id/button7"
@@ -101,9 +97,8 @@
                 android:layout_marginTop="16dp"
                 android:text="@string/button7"
                 android:textSize="16sp"
-                app:cornerRadius="15dp"
                 app:backgroundTint="@color/blue"
-                android:onClick="userVerwaltung"/>
+                app:cornerRadius="15dp" />
 
             <Button
                 android:id="@+id/button8"
@@ -113,11 +108,11 @@
                 android:layout_marginBottom="20dp"
                 android:text="@string/button8"
                 android:textSize="16sp"
-                app:cornerRadius="15dp"
                 app:backgroundTint="@color/blue"
-                android:onClick="abmelden"/>
+                app:cornerRadius="15dp" />
 
         </LinearLayout>
     </ScrollView>
+
 
 </RelativeLayout>

@@ -17,7 +17,7 @@
         android:title="@string/button4" />
     <item
         android:id="@+id/mItem5"
-        android:title="@string/button5" />
+        android:title="@string/wgVerwalten" />
     <item
         android:id="@+id/mItem6"
         android:title="@string/button6" />

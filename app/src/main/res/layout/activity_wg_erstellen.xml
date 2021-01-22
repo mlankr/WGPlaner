@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:text="@string/wgErstellen"
+        android:text="@string/wgVerwalten"
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -55,7 +55,7 @@
         app:hintTextColor="@color/orange">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/bezeichnungField"
+            android:id="@+id/wgErstellenTextField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:focusableInTouchMode="true"
@@ -65,13 +65,13 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/bestaetigenButton"
+        android:id="@+id/wgErstellenBestaetigenButton"
         android:layout_width="170dp"
         android:layout_height="70dp"
         android:layout_below="@+id/wgErstellenField"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="@string/bestaetigen"
+        android:text="@string/erstellen"
         android:textAllCaps="false"
         android:textSize="18sp"
         app:backgroundTint="@color/blue"

@@ -3,64 +3,82 @@ package com.wgplaner.controller;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.wgplaner.R;
+import com.wgplaner.dao.WGDao;
 import com.wgplaner.db.DBHelper;
+import com.wgplaner.model.WG;
 
 
-import java.util.List;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    WGDao wgDao;
+    WG wg;
 
-
-public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
-
         DBHelper.initDBService(getApplicationContext());
 
-//        WG wg = new WG("Studentenwohnheim");
-//        WGDao wgDao = new WGDao();
-//        wgDao.erstellen(wg);
+        findViewById(R.id.button1).setOnClickListener(this);
+        findViewById(R.id.button2).setOnClickListener(this);
+        findViewById(R.id.button3).setOnClickListener(this);
+        findViewById(R.id.button4).setOnClickListener(this);
+        findViewById(R.id.button5).setOnClickListener(this);
+        findViewById(R.id.button6).setOnClickListener(this);
+        findViewById(R.id.button7).setOnClickListener(this);
+        findViewById(R.id.button8).setOnClickListener(this);
 
-//        WG wg = wgDao.getByName("Studentenwohnheim");
-//        Benutzer benutzer = new Benutzer("Max", "Muster", "max@test.com", "xyz", true, wg, 5 );
-//        BenutzerDao benutzerDao = new BenutzerDao();
-//        benutzerDao.create(benutzer);
-
-//        System.out.println(BenutzerDao.get(1));
-
-//        List<Benutzer> list = benutzerDao.alleBenutzer();
-//        System.out.println("TEST: " + list);
-
-//        System.out.println("TEST: " + wgDao.getByName("Studentenwohnheim").getWgMitglieder());
+        wgDao = new WGDao();
+        onResume();
     }
 
-    public void aufgabeAnzeigen(View view) {
-        Intent intent = new Intent(this, AufgabeActivity.class);
-        startActivity(intent);
-    }
-
-    public void wgErstellen(View view) {
-        Intent intent = new Intent(this, WGErstellenActivity.class);
-        startActivity(intent);
-    }
-
-    public void userVerwaltung(View view) {
-        Intent intent = new Intent(this, MitgliedHinzufuegenActivity.class);
-        startActivity(intent);
-    }
-
-    public void abmelden(View view) {
-        System.exit(1);
-    }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         DBHelper.closeDBService();
     }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.button5) {
+            Intent intent = new Intent(this, WGErstellenActivity.class);
+            startActivity(intent);
+        } else {
+            if (wg != null) {
+                if (v.getId() == R.id.button1) {
+                    Intent aufgabeActivity = new Intent(this, AufgabeActivity.class);
+                    startActivity(aufgabeActivity);
+                } else if (v.getId() == R.id.button7) {
+                    Intent mitgliedHinzufuegenActivity = new Intent(this, MitgliedHinzufuegenActivity.class);
+                    startActivity(mitgliedHinzufuegenActivity);
+                } else if (v.getId() == R.id.button8) {
+                    finish();
+                } else {
+                    Intent mitgliedHinzufuegenActivity = new Intent(this, NichtImplementiertActivity.class);
+                    startActivity(mitgliedHinzufuegenActivity);
+                }
+            } else {
+                Toast.makeText(getApplicationContext(), "Bitte erst WG erstellen", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    @Override
+    public void onResume() {
+        wg = wgDao.get();
+        super.onResume();
+        if (wg != null) {
+            Button wgErstellenButton = findViewById(R.id.button5);
+            wgErstellenButton.setText(R.string.wgVerwalten);
+
+        }
+
+    }
+
 }

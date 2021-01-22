@@ -152,7 +152,7 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/bestaetigenButton"
+                android:id="@+id/mitgliedBestaetigenButton"
                 android:layout_width="170dp"
                 android:layout_height="70dp"
                 android:layout_gravity="center_horizontal"

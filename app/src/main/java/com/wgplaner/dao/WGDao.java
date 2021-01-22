@@ -1,5 +1,8 @@
 package com.wgplaner.dao;
 
+import android.widget.Toast;
+
+import com.wgplaner.controller.WGErstellenActivity;
 import com.wgplaner.db.DBHelper;
 import com.wgplaner.db.DBService;
 import com.wgplaner.model.WG;
@@ -12,23 +15,49 @@ public class WGDao {
     // Database helper class object to get the dao
     private final DBService dbService = DBHelper.getDBService();
 
-    public WG erstellen(WG wg) {
+    public int erstellen(WG wg) {
         try {
-            return dbService.getWGDao().createIfNotExists(wg);
+            if (getByName(wg.getName()) == null) {
+                return dbService.getWGDao().create(wg);
+            } else {
+                return -1;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    public int update(String name) {
+        try {
+            WG wg = get();
+            wg.setName(name);
+            return dbService.getWGDao().update(wg);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    public WG getByName(String name) {
+        try {
+            List<WG> wgList = dbService.getWGDao().queryForAll();
+            for (WG wg : wgList) {
+                if (name.toLowerCase().equals(wg.getName().toLowerCase())) {
+                    return wg;
+                }
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return null;
     }
 
-    public WG getByName(String name) {
-        List<WG> wgList = null;
+    public WG get() {
         try {
-            wgList = dbService.getWGDao().queryForAll();
-            for (WG wg : wgList) {
-                if (name.toLowerCase().equals(wg.getName().toLowerCase())) {
-                    return wg;
-                }
+            List<WG> wgList = dbService.getWGDao().queryForAll();
+            if (!wgList.isEmpty()) {
+                return wgList.get(0);
             }
         } catch (SQLException e) {
             e.printStackTrace();

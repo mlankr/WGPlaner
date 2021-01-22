@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WGPlaner">
+        <activity android:name=".controller.NichtImplementiertActivity"></activity>
         <activity android:name=".controller.ErgebnisActivity" />
         <activity android:name=".controller.AufgabeBearbeitenActivity" />
         <activity android:name=".controller.MitgliedHinzufuegenActivity" />

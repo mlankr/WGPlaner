@@ -7,6 +7,7 @@
     <string name="button3">Karma Statistik</string>
     <string name="button4">Einkaufliste anzeigen</string>
     <string name="button5">WG erstellen</string>
+    <string name="button5.1">WG bearbeiten</string>
     <string name="button6">Konto löschen</string>
     <string name="button7">Userverwaltung</string>
     <string name="button8">Abmelden</string>
@@ -45,13 +46,20 @@
 
 
     <string name="wgErstellen">WG erstellen</string>
-    <string name="wgName">WG Name</string>#
+    <string name="wgVerwalten">WG verwalten</string>
+    <string name="erstellen">Erstellen</string>
+    <string name="aktualisieren">Aktualisieren</string>
+    <string name="wgName">WG Name</string>
 
 
     <string name="mitgliedHinzufuegen">Mitglied hinzufügen</string>
     <string name="vorname">Vorname</string>
     <string name="nachname">Nachname</string>
     <string name="email">E-mail Adresse</string>
+
+    <string name="nichtImplementiert">Nicht Implementiert</string>
+    <string name="ohne_Funktion">\n<b>Oops</b>,\nDiese Funktionalität ist noch nicht implementiert.\nBitte kehre zum Dashboard zurück!\n</string>
+
 
     <dimen name="padding_checkbox">30dp</dimen>
 
