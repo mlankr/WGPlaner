@@ -5,9 +5,7 @@ import com.wgplaner.db.DBHelper;
 import com.wgplaner.db.DBService;
 
 import com.wgplaner.model.Aufgabe;
-
 import java.sql.SQLException;
-import java.util.LinkedList;
 import java.util.List;
 
 public class AufgabeDao {
@@ -15,7 +13,7 @@ public class AufgabeDao {
     // Database helper class object to get the dao
     private final DBService dbService = DBHelper.getDBService();
 
-    public int erstelllen(Aufgabe aufgabe) {
+    public int create(Aufgabe aufgabe) {
         try {
             return dbService.getAufgabeDao().create(aufgabe);
         } catch (SQLException e) {
@@ -24,7 +22,7 @@ public class AufgabeDao {
         return 0;
     }
 
-    public int bearbeiten(Aufgabe aufgabe) {
+    public int edit(Aufgabe aufgabe) {
         try {
             return dbService.getAufgabeDao().update(aufgabe);
         } catch (SQLException e) {
@@ -33,7 +31,7 @@ public class AufgabeDao {
         return 0;
     }
 
-    public int loeschen(Aufgabe aufgabe) {
+    public int delete(Aufgabe aufgabe) {
         try {
             return dbService.getAufgabeDao().delete(aufgabe);
         } catch (SQLException e) {
@@ -51,11 +49,23 @@ public class AufgabeDao {
         return null;
     }
 
-    public List<Aufgabe> alleAufgaben() {
+    public List<Aufgabe> allAufgabe() {
         try {
             return dbService.getAufgabeDao().queryForAll();
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Aufgabe findAufgabe(String bezeichnung) {
+        List<Aufgabe> all = allAufgabe();
+        if(!all.isEmpty()) {
+            for (Aufgabe a : all) {
+                if (a.getBezeichnung().equals(bezeichnung)) {
+                    return a;
+                }
+            }
         }
         return null;
     }

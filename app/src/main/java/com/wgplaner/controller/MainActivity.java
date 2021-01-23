@@ -9,14 +9,18 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.wgplaner.R;
+import com.wgplaner.dao.BenutzerDao;
 import com.wgplaner.dao.WGDao;
 import com.wgplaner.db.DBHelper;
+import com.wgplaner.model.Benutzer;
 import com.wgplaner.model.WG;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     WGDao wgDao;
+    BenutzerDao benutzerDao;
     WG wg;
+    Benutzer benutzer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.button8).setOnClickListener(this);
 
         wgDao = new WGDao();
+        benutzerDao = new BenutzerDao();
         onResume();
     }
 
@@ -54,8 +59,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else {
             if (wg != null) {
                 if (v.getId() == R.id.button1) {
-                    Intent aufgabeActivity = new Intent(this, AufgabeActivity.class);
-                    startActivity(aufgabeActivity);
+                    if (benutzerDao.allBenutzer().isEmpty()) {
+                        Toast.makeText(getApplicationContext(), "Bitte unter Userverwaltung nun Mitglied an Ihrer WG hinzufügen", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Intent aufgabeActivity = new Intent(this, AufgabeActivity.class);
+                        startActivity(aufgabeActivity);
+                    }
                 } else if (v.getId() == R.id.button7) {
                     Intent mitgliedHinzufuegenActivity = new Intent(this, MitgliedHinzufuegenActivity.class);
                     startActivity(mitgliedHinzufuegenActivity);

@@ -28,7 +28,7 @@ public class Aufgabe {
     @DatabaseField(canBeNull = false, useGetSet = true, columnName = "zugeordneteAufgabe")
     private boolean zugeordneteAufgaben;
 
-    @DatabaseField(canBeNull = true, foreign = true, useGetSet = true, foreignAutoRefresh = true, columnName = "benutzer")
+    @DatabaseField(canBeNull = false, foreign = true, useGetSet = true, foreignAutoRefresh = true, columnName = "benutzer")
     private Benutzer benutzer;
 
     @DatabaseField(canBeNull = false, foreign = true, useGetSet = true, foreignAutoRefresh = true, columnName = "wg")
@@ -38,7 +38,7 @@ public class Aufgabe {
 
     }
 
-    // Constructor for Aufgaben without Termin without Wiederkehrend and not offeneAufgaben
+    // Constructor for Aufgaben without Termin without Wiederkehrend
     public Aufgabe(String bezeichnung, boolean erledigt, int punkte, boolean zugeordnet, Benutzer benutzer) {
         this.bezeichnung = bezeichnung;
         this.erledigteAufgabe = erledigt;
@@ -47,6 +47,15 @@ public class Aufgabe {
         this.benutzer = benutzer;
     }
 
+    // Constructor for Aufgaben without Termin without Wiederkehrend and not offeneAufgaben
+    public Aufgabe(String bezeichnung, int punkte, Benutzer benutzer, WG wg) {
+        this.bezeichnung = bezeichnung;
+        this.erledigteAufgabe = false;
+        this.karmapunkte = punkte;
+        this.zugeordneteAufgaben = true;
+        this.benutzer = benutzer;
+        this.wg = wg;
+    }
 
     // Getter
     public Termin getAufgabeTermin() {
@@ -113,14 +122,9 @@ public class Aufgabe {
     @Override
     public String toString() {
         return "Aufgabe{" +
-                "aufgabeID=" + aufgabeID +
-                ", bezeichnung='" + bezeichnung + '\'' +
-                ", erledigteAufgabe=" + erledigteAufgabe +
-                ", aufgabeTermin=" + aufgabeTermin +
+                "bezeichnung='" + bezeichnung + '\'' +
                 ", karmapunkte=" + karmapunkte +
-                ", zugeordneteAufgaben=" + zugeordneteAufgaben +
-                ", benutzer=" + benutzer.getEmailAdresse() +
-                ", wg=" + wg.getName() +
+                ", benutzer=" + benutzer +
                 '}';
     }
 }

@@ -15,6 +15,9 @@ import android.widget.Spinner;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.textfield.TextInputLayout;
 import com.wgplaner.R;
+import com.wgplaner.dao.BenutzerDao;
+
+import java.util.List;
 
 public class AufgabeActivity extends AppCompatActivity {
 
@@ -27,6 +30,9 @@ public class AufgabeActivity extends AppCompatActivity {
     TextInputLayout mSearchView;
     Spinner mDropdownFirst;
 
+    BenutzerDao benutzerDao;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,15 +43,18 @@ public class AufgabeActivity extends AppCompatActivity {
         mToolbar = findViewById(R.id.aufgabeAnzeigenToolbar);
         mDropdownFirst = findViewById(R.id.aufgabeZuordnung);
 
+        benutzerDao = new BenutzerDao();
+
 //        mCloseDrawer = findViewById(R.id.closeDrawer);
 
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.drawer_open, R.string.drawer_close);
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
 
-        //create a list of items for the spinner.
-        String[] items = new String[]{"Max", "Peter", "Sara"};
-        ArrayAdapter<String> adapterFirst = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        //Liste von Mietbewohner-Namen im Dropdown Menu.
+        List<String> alleMietbewohner = benutzerDao.allBenutzerName();
+        Object[] name = alleMietbewohner.toArray();
+        ArrayAdapter<Object> adapterFirst = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, name);
         mDropdownFirst.setAdapter(adapterFirst);
 
     }
@@ -65,8 +74,15 @@ public class AufgabeActivity extends AppCompatActivity {
     }
 
     public void ergebnisAnzeigen(View view) {
-        Intent intent = new Intent(this, ErgebnisActivity.class);
-        startActivity(intent);
+        String mietbewohner = mDropdownFirst.getSelectedItem().toString();
+        Intent in = new Intent(this, ErgebnisActivity.class);
+        in.putExtra("ausgewaehlt", mietbewohner);
+        startActivity(in);
+    }
+
+    public void alleAufgabenAnzeigen(View view) {
+        Intent in = new Intent(this, AlleAufgabenActivity.class);
+        startActivity(in);
     }
 
 }

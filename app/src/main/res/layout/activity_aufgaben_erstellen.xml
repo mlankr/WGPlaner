@@ -104,7 +104,9 @@
                     android:focusableInTouchMode="true"
                     android:focusedByDefault="false"
                     android:maxLines="1"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:inputType="numberDecimal"
+                    android:digits="0123456789"/>
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
@@ -152,7 +154,7 @@
             android:background="@android:drawable/btn_dropdown" />
 
         <Button
-            android:id="@+id/bestaetigenButton"
+            android:id="@+id/aufgabeErstellenBestaetigenButton"
             android:layout_width="170dp"
             android:layout_height="70dp"
             android:layout_gravity="center_horizontal"

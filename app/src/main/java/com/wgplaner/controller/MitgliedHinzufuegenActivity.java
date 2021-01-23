@@ -44,9 +44,9 @@ public class MitgliedHinzufuegenActivity extends AppCompatActivity {
         mitgliedBestaetigenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                vorname = vornameInput.getText().toString();
-                nachname = nachnameInput.getText().toString();
-                email = emailInput.getText().toString();
+                vorname = vornameInput.getText().toString().trim();
+                nachname = nachnameInput.getText().toString().trim();
+                email = emailInput.getText().toString().trim();
                 mitgliedHinzufugen(vorname, nachname, email);
             }
         });

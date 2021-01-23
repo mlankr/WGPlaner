@@ -23,7 +23,7 @@ public class Benutzer {
     @DatabaseField(canBeNull = false, useGetSet = true, columnName = "emailAdresse")
     private String emailAdresse;
 
-    @DatabaseField(canBeNull = false, useGetSet = true, columnName = "passwort")
+    @DatabaseField(canBeNull = false, useGetSet = true, columnName = "passwort", defaultValue = "*****")
     private String passwort;
 
     @DatabaseField(canBeNull = false, useGetSet = true, columnName = "angemeldet")
@@ -56,14 +56,13 @@ public class Benutzer {
         this.vorname = firstName;
         this.nachname = lastName;
         this.emailAdresse = email;
-        this.passwort = "foo";
         this.angemeldet = false;
         this.wg = wg;
         this.karmapunkte = 0;
     }
 
     public boolean anmelden(String passwort) {
-        if(passwort.equals(this.passwort)) {
+        if (passwort.equals(this.passwort)) {
             this.angemeldet = true;
             return true;
         } else {
@@ -151,12 +150,13 @@ public class Benutzer {
         this.erledigteAufgabeList = erledigteAufgabeList;
     }
 
-    public void karmapunkteVerbuchen(Aufgabe aufgabe)  {
+    public void karmapunkteVerbuchen(Aufgabe aufgabe) {
     }
 
     public boolean checkKarmeScore() {
         return true;
     }
+
 
     @Override
     public String toString() {

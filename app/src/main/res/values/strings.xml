@@ -58,10 +58,26 @@
     <string name="email">E-mail Adresse</string>
 
     <string name="nichtImplementiert">Nicht Implementiert</string>
-    <string name="ohne_Funktion">\n<b>Oops</b>,\nDiese Funktionalität ist noch nicht implementiert.\nBitte kehre zum Dashboard zurück!\n</string>
+    <string name="ohne_Funktion">\n<b>Oops</b>,\nDiese Funktionalität ist noch nicht implementiert.\nBitte zum Dashboard zurückkehren!\n</string>
 
+    <string name="suchenTitel">Ihre Ergebnisse für </string>
+    <string name="empty">N/A</string>
+    <string name="alleAufgabenTextHeading">Alle Aufgaben Ergebnisse</string>
 
     <dimen name="padding_checkbox">30dp</dimen>
 
     <string name="version">version 1.0.0</string>
+
+
+    <integer name="gravity_center">1</integer>
+    <integer name="gravity_center_horizontal">2</integer>
+    <integer name="gravity_center_vertical">3</integer>
+    <integer name="gravity_top">4</integer>
+    <integer name="gravity_bottom">5</integer>
+    <integer name="gravity_start">6</integer>
+    <integer name="gravity_end">7</integer>
+    <integer name="gravity_left">8</integer>
+    <integer name="gravity_right">9</integer>
+    <integer name="gravity_no_gravity">10</integer>
+
 </resources>
