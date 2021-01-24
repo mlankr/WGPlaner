@@ -3,6 +3,8 @@ package com.wgplaner.model;
 import com.j256.ormlite.table.DatabaseTable;
 import com.j256.ormlite.field.DatabaseField;
 
+import java.util.Date;
+
 /**
  * This class is a representation of a single Aufageb. It has an ID, a Name, may have an associated Termin
  */
@@ -19,7 +21,7 @@ public class Aufgabe {
     @DatabaseField(canBeNull = false, useGetSet = true, columnName = "erledigteAufgabe")
     private boolean erledigteAufgabe;
 
-    @DatabaseField(canBeNull = true, foreign = true, useGetSet = true, foreignAutoRefresh = true, columnName = "termin")
+    @DatabaseField(canBeNull = false, foreign = true, useGetSet = true, foreignAutoRefresh = true, columnName = "termin")
     private Termin aufgabeTermin;
 
     @DatabaseField(canBeNull = false, useGetSet = true, columnName = "karmapunkte")
@@ -42,6 +44,7 @@ public class Aufgabe {
     public Aufgabe(String bezeichnung, boolean erledigt, int punkte, boolean zugeordnet, Benutzer benutzer) {
         this.bezeichnung = bezeichnung;
         this.erledigteAufgabe = erledigt;
+        this.aufgabeTermin = new Termin(new Date());
         this.karmapunkte = punkte;
         this.zugeordneteAufgaben = zugeordnet;
         this.benutzer = benutzer;
@@ -51,6 +54,7 @@ public class Aufgabe {
     public Aufgabe(String bezeichnung, int punkte, Benutzer benutzer, WG wg) {
         this.bezeichnung = bezeichnung;
         this.erledigteAufgabe = false;
+        this.aufgabeTermin = new Termin(new Date());
         this.karmapunkte = punkte;
         this.zugeordneteAufgaben = true;
         this.benutzer = benutzer;

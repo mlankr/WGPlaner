@@ -7,6 +7,7 @@ import com.j256.ormlite.table.DatabaseTable;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 
 @DatabaseTable(tableName = "benutzer")
 public class Benutzer {
@@ -157,9 +158,24 @@ public class Benutzer {
         return true;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Benutzer)) {
+            return false;
+        }
+        Benutzer that = (Benutzer) o;
+        return this.getID() == that.getID() &&
+                this.getVorname().equals(that.getVorname()) &&
+                this.getNachname().equals(that.getNachname()) &&
+                this.getEmailAdresse().equals(that.getEmailAdresse());
+    }
 
     @Override
     public String toString() {
+        return getVorname() + " " + getNachname();
+    }
+
+    public String toStringDetails() {
         return "Benutzer{" +
                 "benutzerID=" + benutzerID +
                 ", vorname='" + vorname + '\'' +
@@ -170,4 +186,5 @@ public class Benutzer {
                 ", karmapunkte=" + karmapunkte +
                 '}';
     }
+
 }

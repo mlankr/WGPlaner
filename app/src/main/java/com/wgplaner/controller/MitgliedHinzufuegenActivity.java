@@ -81,4 +81,8 @@ public class MitgliedHinzufuegenActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
 
+    public void zurueckUserverwaltung(View view) {
+        super.onBackPressed();
+    }
+
 }

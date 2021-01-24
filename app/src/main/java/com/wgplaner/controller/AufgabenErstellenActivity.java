@@ -3,6 +3,7 @@ package com.wgplaner.controller;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -17,12 +18,12 @@ import com.wgplaner.dao.AufgabeDao;
 import com.wgplaner.dao.BenutzerDao;
 import com.wgplaner.dao.WGDao;
 import com.wgplaner.model.Aufgabe;
+import com.wgplaner.model.Benutzer;
 
 import java.util.List;
 
 public class AufgabenErstellenActivity extends AppCompatActivity {
     Spinner mdropdownBenutzer;
-    LinearLayout merledigtCheckBox;
 
     BenutzerDao benutzerDao;
     AufgabeDao aufgabeDao;
@@ -42,7 +43,6 @@ public class AufgabenErstellenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_aufgaben_erstellen);
 
         mdropdownBenutzer = findViewById(R.id.dropDownBenutzer);
-        merledigtCheckBox = findViewById(R.id.erledigtLayout);
         bezeichnungInput = findViewById(R.id.bezeichnungField);
         karmapunkteInput = findViewById(R.id.karmapunkteField);
         aufgabeErstellenBestaetigenButton = findViewById(R.id.aufgabeErstellenBestaetigenButton);
@@ -51,12 +51,9 @@ public class AufgabenErstellenActivity extends AppCompatActivity {
         aufgabeDao = new AufgabeDao();
         wgDao = new WGDao();
 
-        merledigtCheckBox.setVisibility(View.GONE);
-
         //Liste von Mietbewohner-Namen im Dropdown Menu.
-        List<String> alleMietbewohner = benutzerDao.allBenutzerName();
-        Object[] mietbewohner = alleMietbewohner.toArray();
-        ArrayAdapter<Object> adapterFirst = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, mietbewohner);
+        List<Benutzer> alleMietbewohner = benutzerDao.allBenutzer();
+        ArrayAdapter<Benutzer> adapterFirst = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, alleMietbewohner);
         mdropdownBenutzer.setAdapter(adapterFirst);
 
 
@@ -78,23 +75,23 @@ public class AufgabenErstellenActivity extends AppCompatActivity {
 
     private void aufgabeErstellen(String bezeichnung, int punkte, String mietbewohnerName) {
         String message = "";
-        if(bezeichnung.isEmpty()) {
+        if (bezeichnung.isEmpty()) {
             message = "Bezeichnung kann nicht leer sein!";
             bezeichnungInput.setError("Pflichtfeld");
         } else {
-            if (aufgabeDao.findAufgabe(bezeichnung) == null) {
-                Aufgabe aufgabe = new Aufgabe(bezeichnung, punkte, benutzerDao.findBenutzer(mietbewohnerName), wgDao.get());
-                aufgabeDao.create(aufgabe);
-                message = "Aufgabe erfolgreich erstellt";
-                karmapunkteInput.clearFocus();
-                bezeichnungInput.clearFocus();
-                bezeichnungInput.setText("");
-                karmapunkteInput.setText("");
-            } else {
-                message = "Aufgabe schon vorhanden! Bitte erneut versuchen";
-            }
+            Aufgabe aufgabe = new Aufgabe(bezeichnung, punkte, benutzerDao.findBenutzer(mietbewohnerName), wgDao.get());
+            aufgabeDao.create(aufgabe);
+            message = "Aufgabe erfolgreich erstellt";
+            karmapunkteInput.clearFocus();
+            bezeichnungInput.clearFocus();
+            bezeichnungInput.setText("");
+            karmapunkteInput.setText("");
         }
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+    }
+
+    public void zurueckAufgabeAnzeigen(View view) {
+        super.onBackPressed();
     }
 
 }

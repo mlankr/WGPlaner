@@ -5,36 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".controller.AufgabenErstellenActivity">
+    tools:context=".controller.AufgabeBearbeitenActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/aufgabeAnzeigenToolbar"
+        android:id="@+id/aufgabeBearbeitenToolbar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@color/orange"
         android:theme="?attr/actionBarTheme" />
 
     <TextView
-        android:id="@+id/aufgabeAnzeigenView"
+        android:id="@+id/aufgabeBearbeitenView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:text="@string/button9"
+        android:text="@string/aufgabeBearbeiten"
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/backAufgabeErstellen"
+        android:id="@+id/backAufgabeBearbeiten"
         app:srcCompat="@drawable/ic_back"
         android:layout_width="40dp"
         android:layout_height="35dp"
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10sp"
-        android:onClick="zurueckAufgabeAnzeigen"/>
+        android:onClick="zurueckAlleAufgabenAnzeigen"/>
 
 
     <LinearLayout
@@ -70,7 +70,7 @@
                 app:hintTextColor="@color/orange">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/bezeichnungField"
+                    android:id="@+id/bezeichnungFieldBearbeiten"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:focusableInTouchMode="true"
@@ -108,7 +108,7 @@
                 app:hintTextColor="@color/orange">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/karmapunkteField"
+                    android:id="@+id/karmapunkteFieldBearbeiten"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:focusableInTouchMode="true"
@@ -120,8 +120,30 @@
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/erledigtLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp">
+
+            <CheckBox
+                android:id="@+id/erledigtCheckbox"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="@dimen/padding_checkbox"
+                android:text="@string/erledigt"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+
         <TextView
-            android:id="@+id/benutzerAuswaehlen"
+            android:id="@+id/benutzerAuswaehlenBearbeiten"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
@@ -133,7 +155,7 @@
             android:textStyle="bold" />
 
         <Spinner
-            android:id="@+id/dropDownBenutzer"
+            android:id="@+id/dropDownBenutzerBearbeiten"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
@@ -142,12 +164,12 @@
             android:background="@android:drawable/btn_dropdown" />
 
         <Button
-            android:id="@+id/aufgabeErstellenBestaetigenButton"
+            android:id="@+id/aufgabeBearbeitenBestaetigenButton"
             android:layout_width="170dp"
             android:layout_height="70dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="40dp"
-            android:text="@string/bestaetigen"
+            android:text="@string/speichern"
             android:textAllCaps="false"
             android:textSize="18sp"
             app:backgroundTint="@color/blue"

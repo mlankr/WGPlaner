@@ -19,7 +19,7 @@ public class Termin {
     @DatabaseField(canBeNull = true, useGetSet = true, columnName = "wiederkehrend")
     private boolean wiederkehrend;
 
-    @DatabaseField(canBeNull = true, useGetSet = true, columnName = "date")
+    @DatabaseField(canBeNull = false, useGetSet = true, columnName = "date")
     private Date date;
 
     public Termin() {

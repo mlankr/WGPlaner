@@ -5,7 +5,10 @@ import com.wgplaner.db.DBHelper;
 import com.wgplaner.db.DBService;
 
 import com.wgplaner.model.Aufgabe;
+import com.wgplaner.model.Benutzer;
+
 import java.sql.SQLException;
+import java.util.LinkedList;
 import java.util.List;
 
 public class AufgabeDao {
@@ -22,7 +25,7 @@ public class AufgabeDao {
         return 0;
     }
 
-    public int edit(Aufgabe aufgabe) {
+    public int update(Aufgabe aufgabe) {
         try {
             return dbService.getAufgabeDao().update(aufgabe);
         } catch (SQLException e) {
@@ -60,7 +63,7 @@ public class AufgabeDao {
 
     public Aufgabe findAufgabe(String bezeichnung) {
         List<Aufgabe> all = allAufgabe();
-        if(!all.isEmpty()) {
+        if (!all.isEmpty()) {
             for (Aufgabe a : all) {
                 if (a.getBezeichnung().equals(bezeichnung)) {
                     return a;
@@ -68,5 +71,15 @@ public class AufgabeDao {
             }
         }
         return null;
+    }
+
+    public List<Aufgabe> findByBenutzer(Benutzer benutzer) {
+        List<Aufgabe> filteredAufgabe = new LinkedList<>();
+        for (Aufgabe a : allAufgabe()) {
+            if (a.getBenutzer().equals(benutzer)) {
+                filteredAufgabe.add(a);
+            }
+        }
+        return filteredAufgabe;
     }
 }

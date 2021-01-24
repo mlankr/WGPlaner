@@ -1,7 +1,5 @@
 package com.wgplaner.controller;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +7,8 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.wgplaner.R;
 import com.wgplaner.dao.WGDao;
@@ -91,5 +91,9 @@ public class WGErstellenActivity extends AppCompatActivity {
         if (wg != null) {
             erstellenButton.setText(R.string.aktualisieren);
         }
+    }
+
+    public void zurueckWgVerwalten(View view) {
+        super.onBackPressed();
     }
 }

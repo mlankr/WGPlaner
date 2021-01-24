@@ -27,31 +27,17 @@
         android:textSize="20sp"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/aufgabeErstellenButton"
-        android:layout_width="170dp"
-        android:layout_height="70dp"
-        android:layout_below="@id/aufgabeAnzeigenToolbar"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:onClick="aufgabeErstellenAnzeigen"
-        android:text="@string/button9"
-        android:textAllCaps="false"
-        android:textSize="16sp"
-        app:backgroundTint="@color/blue"
-        app:cornerRadius="15dp">
 
-    </Button>
 
     <TextView
         android:id="@+id/dropDownFirst_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/aufgabeErstellenButton"
+        android:layout_below="@id/aufgabeAnzeigenToolbar"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="80dp"
         android:layout_marginLeft="80dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:text="@string/aufgabenGeordnet"
         android:textColor="@color/black"
         android:textSize="16sp"
@@ -65,6 +51,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
         android:background="@android:drawable/btn_dropdown" />
+
 
     <Button
         android:id="@+id/filternButton"
@@ -80,13 +67,31 @@
         app:backgroundTint="@color/blue"
         app:cornerRadius="15dp" />
 
+
+    <Button
+        android:id="@+id/aufgabeErstellenButton"
+        android:layout_width="170dp"
+        android:layout_height="70dp"
+        android:layout_below="@id/filternButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:onClick="aufgabeErstellenAnzeigen"
+        android:text="@string/button9"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        app:backgroundTint="@color/blue"
+        app:cornerRadius="15dp">
+
+    </Button>
+
+
     <Button
         android:id="@+id/alleAufgaben"
         android:layout_width="170dp"
         android:layout_height="70dp"
-        android:layout_below="@+id/filternButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="80dp"
+        android:layout_below="@id/aufgabeErstellenButton"
         android:text="@string/alleAufgaben"
         android:textAllCaps="false"
         android:textSize="16sp"

@@ -13,12 +13,12 @@
         android:theme="?attr/actionBarTheme" />
 
     <TextView
-        android:id="@+id/ergebnisViewAlleAufgaben"
+        android:id="@+id/headingViewAlleAufgaben"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:text="@string/ergebnis"
+        android:text="@string/alleAufgaben"
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -36,37 +36,23 @@
 
 
     <TextView
-        android:id="@+id/resultFilterAlleAufgaben"
+        android:id="@+id/aufgabeListeTitel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ergebnisToolbarAlleAufgaben"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/suchenTitel"
+        android:layout_marginTop="10dp"
+        android:text="@string/suchenTitelAlleAufgaben"
         android:textColor="@color/orange"
-        android:textSize="25sp"
-        android:textStyle="italic" />
+        android:textSize="23sp"
+        android:textStyle="italic"
+        android:layout_centerHorizontal="true"/>
 
-
-    <TextView
-        android:id="@+id/wgNameViewAlleAufgaben"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="80dp"
-        android:layout_toEndOf="@id/resultFilterAlleAufgaben"
-        android:layout_toRightOf="@id/resultFilterAlleAufgaben"
-        android:text="@string/empty"
-        android:textColor="@color/black"
-        android:textSize="25sp" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/resultFilterAlleAufgaben"
-        android:layout_marginTop="25dp"
+        android:layout_below="@+id/aufgabeListeTitel"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="25dp">
 
         <LinearLayout

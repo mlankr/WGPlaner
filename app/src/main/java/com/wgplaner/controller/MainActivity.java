@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     WGDao wgDao;
     BenutzerDao benutzerDao;
     WG wg;
-    Benutzer benutzer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +38,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         wgDao = new WGDao();
         benutzerDao = new BenutzerDao();
+        if (wgDao.get() != null && benutzerDao.getByEmail("admin@wg.com") == null) {
+            benutzerDao.create(new Benutzer("Admin", "Admin", "admin@wg.com", "*****", true, wgDao.get(), 0));
+        }
         onResume();
     }
 

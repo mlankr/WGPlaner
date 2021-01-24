@@ -48,7 +48,6 @@ public class BenutzerDao {
         return false;
     }
 
-
     public Benutzer getByEmail(String email) {
         List<Benutzer> benutzerList = allBenutzer();
         for (Benutzer b : benutzerList) {
@@ -59,7 +58,6 @@ public class BenutzerDao {
         return null;
     }
 
-
     public List<Benutzer> allBenutzer() {
         try {
             return dbService.getBenutzerDao().queryForAll();
@@ -68,18 +66,6 @@ public class BenutzerDao {
         }
         return Collections.emptyList();
     }
-
-    public List<String> allBenutzerName() {
-        List<Benutzer> liste = allBenutzer();
-        List<String> names = new LinkedList<>();
-        String mitglied = "";
-        for (Benutzer b : liste) {
-            mitglied = b.getVorname() + " " + b.getNachname();
-            names.add(mitglied.trim());
-        }
-        return names;
-    }
-
 
     public Benutzer findBenutzer(String name) {
         List<Benutzer> allBenutzerList = allBenutzer();

@@ -16,6 +16,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.textfield.TextInputLayout;
 import com.wgplaner.R;
 import com.wgplaner.dao.BenutzerDao;
+import com.wgplaner.model.Benutzer;
 
 import java.util.List;
 
@@ -25,9 +26,6 @@ public class AufgabeActivity extends AppCompatActivity {
     DrawerLayout mDrawerLayout;
     Toolbar mToolbar;
     ActionBarDrawerToggle mToggle;
-//    ImageView mCloseDrawer;
-
-    TextInputLayout mSearchView;
     Spinner mDropdownFirst;
 
     BenutzerDao benutzerDao;
@@ -45,27 +43,20 @@ public class AufgabeActivity extends AppCompatActivity {
 
         benutzerDao = new BenutzerDao();
 
-//        mCloseDrawer = findViewById(R.id.closeDrawer);
-
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.drawer_open, R.string.drawer_close);
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
 
         //Liste von Mietbewohner-Namen im Dropdown Menu.
-        List<String> alleMietbewohner = benutzerDao.allBenutzerName();
-        Object[] name = alleMietbewohner.toArray();
-        ArrayAdapter<Object> adapterFirst = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, name);
+        List<Benutzer> alleMietbewohner = benutzerDao.allBenutzer();
+        ArrayAdapter<Benutzer> adapterFirst = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, alleMietbewohner);
         mDropdownFirst.setAdapter(adapterFirst);
 
     }
 
-    @Override
-    public void onBackPressed() {
-        if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
-            mDrawerLayout.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
+
+    public void closeDrawer(View view) {
+        mDrawerLayout.closeDrawer(GravityCompat.START);
     }
 
     public void aufgabeErstellenAnzeigen(View view) {
@@ -74,14 +65,15 @@ public class AufgabeActivity extends AppCompatActivity {
     }
 
     public void ergebnisAnzeigen(View view) {
-        String mietbewohner = mDropdownFirst.getSelectedItem().toString();
-        Intent in = new Intent(this, ErgebnisActivity.class);
-        in.putExtra("ausgewaehlt", mietbewohner);
+        Benutzer mietbewohner = (Benutzer) mDropdownFirst.getSelectedItem();
+        Intent in = new Intent(this, AlleAufgabenActivity.class);
+        in.putExtra("ausgewaehlt", mietbewohner.getEmailAdresse());
         startActivity(in);
     }
 
     public void alleAufgabenAnzeigen(View view) {
         Intent in = new Intent(this, AlleAufgabenActivity.class);
+        in.putExtra("ausgewaehlt", "");
         startActivity(in);
     }
 

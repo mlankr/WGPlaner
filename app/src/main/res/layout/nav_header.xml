@@ -28,11 +28,16 @@
         android:textSize="20sp"
         android:textStyle="bold" />
 
-    <!--    <ImageView-->
-    <!--        android:id="@+id/closeDrawer"-->
-    <!--        android:layout_width="50dp"-->
-    <!--        android:layout_height="60dp"-->
-    <!--        android:layout_alignParentRight="true"-->
-    <!--        android:layout_alignParentEnd="true"-->
-    <!--        app:srcCompat="@drawable/ic_close" />-->
+    <ImageView
+        android:id="@+id/backAlleAufgaben"
+        app:srcCompat="@drawable/ic_back"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginEnd="5dp"
+        android:onClick="closeDrawer"/>
+
 </RelativeLayout>

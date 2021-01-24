@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
@@ -23,16 +24,37 @@
         android:textSize="20sp"
         android:textStyle="bold" />
 
+    <ImageView
+        android:id="@+id/backNichtImplementiert"
+        app:srcCompat="@drawable/ic_back"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10sp"
+        android:onClick="zurueckNichtImplementiert"/>
+
+
+
+    <ImageView
+        android:id="@+id/oopsImage"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        app:srcCompat="@drawable/oops"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"/>
+
     <TextView
         android:id="@+id/nichtImplementiert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
         android:gravity="center_horizontal"
-        android:padding="50dp"
         android:text="@string/ohne_Funktion"
         android:textAllCaps="false"
         android:textColor="@color/orange"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        android:layout_below="@+id/oopsImage"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"/>
 
 </RelativeLayout>

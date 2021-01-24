@@ -58,15 +58,21 @@
     <string name="email">E-mail Adresse</string>
 
     <string name="nichtImplementiert">Nicht Implementiert</string>
-    <string name="ohne_Funktion">\n<b>Oops</b>,\nDiese Funktionalität ist noch nicht implementiert.\nBitte zum Dashboard zurückkehren!\n</string>
+    <string name="ohne_Funktion">\nDiese Funktionalität ist leider noch nicht implementiert.\nBitte zum Dashboard zurückkehren!\n</string>
 
-    <string name="suchenTitel">Ihre Ergebnisse für </string>
+    <string name="suchenTitelFilter">Aufgaben von </string>
+    <string name="suchenTitelAlleAufgaben">Alle Aufgaben Ihrer WG </string>
     <string name="empty">N/A</string>
     <string name="alleAufgabenTextHeading">Alle Aufgaben Ergebnisse</string>
 
-    <dimen name="padding_checkbox">30dp</dimen>
+    <string name="aufgabeBearbeiten">Aufgabe Bearbeiten</string>
+    <string name="speichern">Speichern</string>
 
+    <string name="platzhalter">%1$s%2$d</string>
+
+    <dimen name="padding_checkbox">30dp</dimen>
     <string name="version">version 1.0.0</string>
+
 
 
     <integer name="gravity_center">1</integer>

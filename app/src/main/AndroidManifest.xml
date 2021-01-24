@@ -11,10 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WGPlaner">
-        <activity android:name=".controller.AlleAufgabenActivity"></activity>
+        <activity android:name=".controller.AufgabeBearbeitenActivity"></activity>
+        <activity android:name=".controller.DrawerActivity" />
+        <activity android:name=".controller.AlleAufgabenActivity" />
         <activity android:name=".controller.NichtImplementiertActivity" />
-        <activity android:name=".controller.ErgebnisActivity" />
-        <activity android:name=".controller.AufgabeBearbeitenActivity" />
         <activity
             android:name=".controller.MitgliedHinzufuegenActivity"
             android:screenOrientation="portrait" />
