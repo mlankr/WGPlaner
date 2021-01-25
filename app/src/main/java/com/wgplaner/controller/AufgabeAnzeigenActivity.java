@@ -13,14 +13,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.textfield.TextInputLayout;
 import com.wgplaner.R;
 import com.wgplaner.dao.BenutzerDao;
 import com.wgplaner.model.Benutzer;
 
 import java.util.List;
 
-public class AufgabeActivity extends AppCompatActivity {
+public class AufgabeAnzeigenActivity extends AppCompatActivity {
 
     NavigationView mNavigationView;
     DrawerLayout mDrawerLayout;
@@ -47,13 +46,21 @@ public class AufgabeActivity extends AppCompatActivity {
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
 
+        showMietbewohnerDropdown();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        showMietbewohnerDropdown();
+    }
+
+    public void showMietbewohnerDropdown() {
         //Liste von Mietbewohner-Namen im Dropdown Menu.
         List<Benutzer> alleMietbewohner = benutzerDao.allBenutzer();
         ArrayAdapter<Benutzer> adapterFirst = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, alleMietbewohner);
         mDropdownFirst.setAdapter(adapterFirst);
-
     }
-
 
     public void closeDrawer(View view) {
         mDrawerLayout.closeDrawer(GravityCompat.START);

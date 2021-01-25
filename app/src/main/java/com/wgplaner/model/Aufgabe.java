@@ -3,10 +3,8 @@ package com.wgplaner.model;
 import com.j256.ormlite.table.DatabaseTable;
 import com.j256.ormlite.field.DatabaseField;
 
-import java.util.Date;
-
 /**
- * This class is a representation of a single Aufageb. It has an ID, a Name, may have an associated Termin
+ * This class is a representation of a single Aufgabe. It has an ID, a Name, may have an associated Termin
  */
 
 @DatabaseTable(tableName = "aufgabe")
@@ -130,6 +128,4 @@ public class Aufgabe {
                 ", benutzer=" + benutzer +
                 '}';
     }
-
-
 }

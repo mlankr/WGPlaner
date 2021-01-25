@@ -1,31 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item
+        android:id="@+id/aufgabeAnzeigenMenu"
+        android:title="@string/aufgabeAnzeigenButtonDashboard" />
 
     <item
-        android:id="@+id/mItem1"
-        android:title="@string/button1" />
-
+        android:id="@+id/offeneAufgabenMenu"
+        android:title="@string/offeneAufgabenButtonDashboard" />
     <item
-        android:id="@+id/mItem2"
-        android:title="@string/button2" />
+        android:id="@+id/karmastatistikMenu"
+        android:title="@string/karmastatistikButtonDashboard" />
     <item
-        android:id="@+id/mItem3"
-        android:title="@string/button3" />
+        android:id="@+id/einkauflisteAnzeigenMenu"
+        android:title="@string/einkauflisteAnzeigenButtonDashboard" />
     <item
-        android:id="@+id/mItem4"
-        android:title="@string/button4" />
-    <item
-        android:id="@+id/mItem5"
+        android:id="@+id/wgVerwaltenMenu"
         android:title="@string/wgVerwalten" />
     <item
-        android:id="@+id/mItem6"
-        android:title="@string/button6" />
+        android:id="@+id/kontoLoeschenMenu"
+        android:title="@string/kontoLoeschenButtonDashboard" />
     <item
-        android:id="@+id/mItem7"
-        android:title="@string/button7" />
+        android:id="@+id/userverwaltugMenu"
+        android:title="@string/userverwaltugButtonDashboard" />
     <item
-        android:id="@+id/mItem8"
-        android:title="@string/button8" />
+        android:id="@+id/abmeldenMenu"
+        android:title="@string/abmeldenButtonDashboard" />
 
 </menu>

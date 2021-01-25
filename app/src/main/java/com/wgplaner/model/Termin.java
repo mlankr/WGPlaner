@@ -5,7 +5,6 @@ import com.j256.ormlite.table.DatabaseTable;
 
 import java.util.Date;
 
-
 /**
  * This class is a representation of a single Termin. It has an ID, a Date, may have an repetition
  */

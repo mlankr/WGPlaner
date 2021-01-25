@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".controller.WGErstellenActivity">
+    tools:context=".controller.WGErstellenAndVerwaltenActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/wgErstelenToolbar"
@@ -35,7 +35,6 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10sp"
         android:onClick="zurueckWgVerwalten"/>
-
 
     <ImageView
         android:id="@+id/wgImage"
@@ -86,6 +85,5 @@
         android:textSize="18sp"
         app:backgroundTint="@color/blue"
         app:cornerRadius="15dp" />
-
 
 </RelativeLayout>

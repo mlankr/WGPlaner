@@ -3,13 +3,9 @@ package com.wgplaner.dao;
 
 import com.wgplaner.db.DBHelper;
 import com.wgplaner.db.DBService;
-
 import com.wgplaner.model.Aufgabe;
 import com.wgplaner.model.Benutzer;
-import com.wgplaner.model.Termin;
-
 import java.sql.SQLException;
-import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 

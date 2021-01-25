@@ -7,7 +7,6 @@ import com.wgplaner.model.Benutzer;
 
 import java.sql.SQLException;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 public class BenutzerDao {
@@ -18,6 +17,15 @@ public class BenutzerDao {
     public int create(Benutzer benutzer) {
         try {
             return dbService.getBenutzerDao().create(benutzer);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    public int update(Benutzer benutzer) {
+        try {
+            return dbService.getBenutzerDao().update(benutzer);
         } catch (SQLException e) {
             e.printStackTrace();
         }

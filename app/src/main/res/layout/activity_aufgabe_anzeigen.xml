@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".controller.AufgabeActivity">
+    tools:context=".controller.AufgabeAnzeigenActivity">
 
 
     <androidx.appcompat.widget.Toolbar
@@ -26,8 +26,6 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold" />
-
-
 
     <TextView
         android:id="@+id/dropDownFirst_top"
@@ -52,7 +50,6 @@
         android:layout_marginTop="5dp"
         android:background="@android:drawable/btn_dropdown" />
 
-
     <Button
         android:id="@+id/filternButton"
         android:layout_width="170dp"
@@ -67,7 +64,6 @@
         app:backgroundTint="@color/blue"
         app:cornerRadius="15dp" />
 
-
     <Button
         android:id="@+id/aufgabeErstellenButton"
         android:layout_width="170dp"
@@ -76,7 +72,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
         android:onClick="aufgabeErstellenAnzeigen"
-        android:text="@string/button9"
+        android:text="@string/aufgabeErstellen"
         android:textAllCaps="false"
         android:textSize="16sp"
         app:backgroundTint="@color/blue"
@@ -84,19 +80,18 @@
 
     </Button>
 
-
     <Button
         android:id="@+id/alleAufgaben"
         android:layout_width="170dp"
         android:layout_height="70dp"
+        android:layout_below="@id/aufgabeErstellenButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="80dp"
-        android:layout_below="@id/aufgabeErstellenButton"
+        android:onClick="alleAufgabenAnzeigen"
         android:text="@string/alleAufgaben"
         android:textAllCaps="false"
         android:textSize="16sp"
         app:backgroundTint="@color/blue"
-        app:cornerRadius="15dp"
-        android:onClick="alleAufgabenAnzeigen"/>
+        app:cornerRadius="15dp" />
 
 </RelativeLayout>

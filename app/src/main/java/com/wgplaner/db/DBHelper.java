@@ -27,6 +27,4 @@ public class DBHelper {
         }
         return dbService;
     }
-
-
 }

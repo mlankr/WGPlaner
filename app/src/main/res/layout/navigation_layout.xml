@@ -8,7 +8,7 @@
     tools:openDrawer="start">
 
     <include
-        layout="@layout/activity_aufgabe"
+        layout="@layout/activity_aufgabe_anzeigen"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:headerLayout="@layout/nav_header"
+        app:headerLayout="@layout/navigation_header"
         app:menu="@menu/nav_drawer_menu">
 
         <TextView
@@ -31,6 +31,5 @@
             android:textColor="@color/gray"
             android:textSize="15sp" />
     </com.google.android.material.navigation.NavigationView>
-
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -1,8 +1,5 @@
 package com.wgplaner.dao;
 
-import android.widget.Toast;
-
-import com.wgplaner.controller.WGErstellenActivity;
 import com.wgplaner.db.DBHelper;
 import com.wgplaner.db.DBService;
 import com.wgplaner.model.WG;

@@ -65,6 +65,7 @@ public class AufgabeBearbeitenActivity extends AppCompatActivity {
 
         bezeichnungBearbeiten.setText(aufgabe.getBezeichnung());
         karmapunkteBearbeiten.setText(getString(R.string.platzhalter, "", aufgabe.getKarmapunkte()));
+        erledigtCheckbox.setChecked(aufgabe.getErledigteAufgabe());
         int index = adapterList.getPosition(aufgabe.getBenutzer());
         dropdownBearbeiten.setSelection(index);
 
@@ -88,6 +89,7 @@ public class AufgabeBearbeitenActivity extends AppCompatActivity {
         Benutzer aufgabeBenutzer = (Benutzer) dropdownBearbeiten.getSelectedItem();
 
         String message = "Etwas schief gelaufen! Bitte erneut versuchen";
+        int updated = 0;
         if (aufgabeBezeichnung.isEmpty()) {
             message = "Bezeichnung kann nicht leer sein!";
             bezeichnungBearbeiten.setError("Pflichtfeld");
@@ -97,18 +99,22 @@ public class AufgabeBearbeitenActivity extends AppCompatActivity {
             aufgabe.setKarmapunkte(aufgabekarmapunkte);
             aufgabe.setErledigteAufgabe(aufgabeErledigt);
             aufgabe.setBenutzer(aufgabeBenutzer);
-            int updated = aufgabeDao.update(aufgabe);
+
+            updated = aufgabeDao.update(aufgabe);
             if (updated == 1) {
-                message = "Aufgabe erfolgreich bearbeitet!";
                 if (aufgabeErledigt) {
-                    erledigteAufgabe = new ErledigteAufgabe(aufgabe.getBezeichnung(), aufgabe.getKarmapunkte(), aufgabe.getBenutzer());
+                    Benutzer benutzer = aufgabe.getBenutzer();
+                    erledigteAufgabe = new ErledigteAufgabe(aufgabe.getBezeichnung(), aufgabe.getKarmapunkte(), benutzer);
                     erledigteAufgabeDao.create(erledigteAufgabe);
+                    benutzer.setKarmapunkte(benutzer.getKarmapunkte() + aufgabe.getKarmapunkte());
+                    benutzerDao.update(benutzer);
+                    message = "Prima! Diese Aufgabe ist nun erledigt";
+                } else {
+                    message = "Aufgabe erfolgreich bearbeitet!";
                 }
-
             }
-            Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-            finish();
         }
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+        if (updated == 1) finish();
     }
-
 }

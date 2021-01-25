@@ -13,7 +13,6 @@ import com.wgplaner.model.Benutzer;
 import com.wgplaner.model.ErledigteAufgabe;
 import com.wgplaner.model.Termin;
 import com.wgplaner.model.WG;
-
 import java.sql.SQLException;
 
 
@@ -123,7 +122,6 @@ public class DBService extends OrmLiteSqliteOpenHelper {
         }
         return wgDao;
     }
-
 
     /**
      * Close the database connections and clear any cached DAOs.

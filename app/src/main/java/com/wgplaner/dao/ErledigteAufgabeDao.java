@@ -2,7 +2,6 @@ package com.wgplaner.dao;
 
 import com.wgplaner.db.DBHelper;
 import com.wgplaner.db.DBService;
-import com.wgplaner.model.Aufgabe;
 import com.wgplaner.model.ErledigteAufgabe;
 
 import java.sql.SQLException;
@@ -13,16 +12,16 @@ public class ErledigteAufgabeDao {
     // Database helper class object to get the dao
     private final DBService dbService = DBHelper.getDBService();
 
-    public int create(ErledigteAufgabe aufgabe) {
+    public int create(ErledigteAufgabe erledigteAufgabe) {
         try {
-            return dbService.getErledigteAufgabeDao().create(aufgabe);
+            return dbService.getErledigteAufgabeDao().create(erledigteAufgabe);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
         return 0;
     }
 
-    public List<ErledigteAufgabe> getErledigteAufgabe() {
+    public List<ErledigteAufgabe> getAlle() {
         try {
             return dbService.getErledigteAufgabeDao().queryForAll();
         } catch (SQLException throwables) {

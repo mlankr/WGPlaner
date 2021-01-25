@@ -26,15 +26,15 @@
         <activity
             android:name=".controller.MitgliedHinzufuegenActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".controller.WGErstellenActivity" />
+        <activity android:name=".controller.WGErstellenAndVerwaltenActivity" />
         <activity
             android:name=".controller.AufgabenErstellenActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".controller.AufgabeActivity"
+            android:name=".controller.AufgabeAnzeigenActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".controller.MainActivity"
+            android:name=".controller.DashboardActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
             <intent-filter>

@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@color/orange"
-        android:theme="?attr/actionBarTheme"/>
+        android:theme="?attr/actionBarTheme" />
 
     <TextView
         android:id="@+id/headingViewAlleAufgaben"
@@ -28,13 +28,13 @@
 
     <ImageView
         android:id="@+id/backAlleAufgaben"
-        app:srcCompat="@drawable/ic_back"
         android:layout_width="40dp"
         android:layout_height="35dp"
-        android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="10sp"
-        android:onClick="zurueckAlleAufgaben"/>
+        android:onClick="zurueckAlleAufgaben"
+        app:srcCompat="@drawable/ic_back" />
 
 
     <TextView
@@ -42,19 +42,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ergebnisToolbarAlleAufgaben"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:text="@string/suchenTitelAlleAufgaben"
         android:textColor="@color/orange"
         android:textSize="23sp"
-        android:textStyle="italic"
-        android:layout_centerHorizontal="true"/>
+        android:textStyle="italic" />
 
+    <LinearLayout
+        android:id="@+id/punktestandLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aufgabeListeTitel"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <TextView
+            android:id="@+id/punktestand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/empty"
+            android:textColor="@color/black"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/aufgabeListeTitel"
-        android:layout_marginTop="30dp"
+        android:layout_below="@+id/punktestandLayout"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="25dp">
 
         <LinearLayout
@@ -66,7 +84,6 @@
             android:paddingRight="20dp">
 
         </LinearLayout>
-
 
     </ScrollView>
 

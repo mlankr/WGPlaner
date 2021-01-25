@@ -5,10 +5,6 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 
-import java.util.LinkedList;
-import java.util.List;
-
-
 /**
  * This class is a representation of a WG. It has an ID, a Name and stores all Mitglieder and Aufgaben associated with this WG.
  */
