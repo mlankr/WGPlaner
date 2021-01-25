@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.wgplaner.R;
 import com.wgplaner.dao.AufgabeDao;
@@ -26,7 +27,6 @@ public class AlleAufgabenActivity extends AppCompatActivity {
     BenutzerDao benutzerDao = new BenutzerDao();
     AufgabeDao aufgabeDao = new AufgabeDao();
 
-    TextView aufgabeListeTitelWgName;
     TextView aufgabeListeTitel;
     ImageView zurueckInAlleAufgaben;
 
@@ -41,7 +41,6 @@ public class AlleAufgabenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_alle_aufgaben);
 
         aufgabeListeTitel = findViewById(R.id.aufgabeListeTitel);
-//        aufgabeListeTitelWgName = findViewById(R.id.aufgabeListeTitelWgName);
         parentInAlleAufgaben = findViewById(R.id.parentLayoutAlleAufgaben);
         zurueckInAlleAufgaben = findViewById(R.id.backAlleAufgaben);
 
@@ -107,17 +106,17 @@ public class AlleAufgabenActivity extends AppCompatActivity {
                         + "</br><br>Karmapunkte &ensp:&ensp;" + aufgabe.getKarmapunkte() + "</br><br>Erledigt &emsp;&emsp;&emsp;:&ensp;" + aufgabe.getErledigteAufgabe() +
                         "</br><br>Zugeordnet zu :&ensp;" + aufgabe.getBenutzer().getVorname() + " " + aufgabe.getBenutzer().getNachname()));
                 textView.setTextColor(Color.BLACK);
-                textView.setTextSize(22);
+                textView.setTextSize(20);
 
                 linearLayout.addView(textView);
                 linearLayout.addView(imageView, imageParams);
                 parentInAlleAufgaben.addView(linearLayout, linearParams);
 
-
                 imageView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         aufgabeBearbeiten(aufgabe.getBezeichnung());
+                        Toast.makeText(getApplicationContext(), aufgabe.getBezeichnung() , Toast.LENGTH_SHORT);
                     }
                 });
             }

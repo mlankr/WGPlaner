@@ -21,7 +21,7 @@ public class Aufgabe {
     @DatabaseField(canBeNull = false, useGetSet = true, columnName = "erledigteAufgabe")
     private boolean erledigteAufgabe;
 
-    @DatabaseField(canBeNull = false, foreign = true, useGetSet = true, foreignAutoRefresh = true, columnName = "termin")
+    @DatabaseField(canBeNull = true, foreign = true, useGetSet = true, foreignAutoRefresh = true, columnName = "termin")
     private Termin aufgabeTermin;
 
     @DatabaseField(canBeNull = false, useGetSet = true, columnName = "karmapunkte")
@@ -41,20 +41,19 @@ public class Aufgabe {
     }
 
     // Constructor for Aufgaben without Termin without Wiederkehrend
-    public Aufgabe(String bezeichnung, boolean erledigt, int punkte, boolean zugeordnet, Benutzer benutzer) {
+    public Aufgabe(String bezeichnung, boolean erledigt, int punkte, boolean zugeordnet, Benutzer benutzer, WG wg) {
         this.bezeichnung = bezeichnung;
         this.erledigteAufgabe = erledigt;
-        this.aufgabeTermin = new Termin(new Date());
         this.karmapunkte = punkte;
         this.zugeordneteAufgaben = zugeordnet;
         this.benutzer = benutzer;
+        this.wg = wg;
     }
 
     // Constructor for Aufgaben without Termin without Wiederkehrend and not offeneAufgaben
     public Aufgabe(String bezeichnung, int punkte, Benutzer benutzer, WG wg) {
         this.bezeichnung = bezeichnung;
         this.erledigteAufgabe = false;
-        this.aufgabeTermin = new Termin(new Date());
         this.karmapunkte = punkte;
         this.zugeordneteAufgaben = true;
         this.benutzer = benutzer;
@@ -131,4 +130,6 @@ public class Aufgabe {
                 ", benutzer=" + benutzer +
                 '}';
     }
+
+
 }
