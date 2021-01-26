@@ -1,50 +1,72 @@
 package com.wgplaner.controller;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.wgplaner.R;
 import com.wgplaner.dao.WGDao;
 import com.wgplaner.model.WG;
 
 public class WGErstellenAndVerwaltenActivity extends AppCompatActivity {
-    String name;
 
+    // Components shown in the layout file as member variables
     EditText wgVerwaltenInput;
     Button erstellenButton;
 
+    // Dao objects as member variables
     WGDao wgDao;
     WG wg;
+
+    // WG name as member variable
+    String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wg_erstellen_verwalten);
 
+        // Initialize all components in the view
         wgVerwaltenInput = findViewById(R.id.wgErstellenTextField);
         erstellenButton = findViewById(R.id.wgErstellenBestaetigenButton);
 
+        // Initialize Dao objects
         wgDao = new WGDao();
+
+        // Fetch the current WG present in database
         wg = wgDao.get();
+
+        // Set onClickListener for the Button and get the user input
         erstellenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                closeKeyboard();
                 name = wgVerwaltenInput.getText().toString();
+
+                // Create WG with the name provided
                 wgErstellen(name);
             }
         });
-        if(wg != null) {
+
+        // Set WG name in the input field as such
+        if (wg != null) {
             wgVerwaltenInput.setText(wg.getName());
         }
-        onResume();
     }
 
+    // Change the 'Erstellen' button to 'Aktualisieren' on resuming this activity
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (wg != null) {
+            erstellenButton.setText(R.string.aktualisieren);
+        }
+    }
+
+    // Validate and create new WG to be saved in the database or update the WG already present in the database
     private void wgErstellen(String name) {
         String message = "";
         int status = 0;
@@ -62,38 +84,22 @@ public class WGErstellenAndVerwaltenActivity extends AppCompatActivity {
             }
         } else {
             WG wg = new WG(name);
-            status = wgDao.erstellen(wg);
+            status = wgDao.create(wg);
             if (status > 0) {
                 message = "WG ' " + wg.getName() + " ' ist erfolgreich erstellt";
-            } else if (status== -1) {
+            } else if (status == -1) {
                 message = "WG ' " + wg.getName() + " ' bereits vorhanden! Bitte mit neuem Name versuchen";
             } else {
                 message = "WG erstellen nicht erfolgreich! Bitte erneut versuchen";
             }
         }
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-        if(status == 1) {
+        if (status == 1) {
             finish();
         }
     }
 
-    private void closeKeyboard() {
-        View view = this.getCurrentFocus();
-        if (view != null) {
-            wgVerwaltenInput.clearFocus();
-            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-            inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
-        }
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        if (wg != null) {
-            erstellenButton.setText(R.string.aktualisieren);
-        }
-    }
-
+    // Method to redirect on previous page
     public void zurueckWgVerwalten(View view) {
         super.onBackPressed();
     }

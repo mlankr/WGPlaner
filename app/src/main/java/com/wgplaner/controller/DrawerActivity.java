@@ -12,7 +12,10 @@ import android.view.MenuItem;
 import com.google.android.material.navigation.NavigationView;
 import com.wgplaner.R;
 
-
+/**
+ * This Activity is planned as a common Drawer Layout for all the Activities
+ * TODO: Work in progress
+ */
 public class DrawerActivity extends AppCompatActivity {
     public DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;

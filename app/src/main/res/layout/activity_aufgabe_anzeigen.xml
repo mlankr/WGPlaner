@@ -57,7 +57,7 @@
         android:layout_below="@id/aufgabeZuordnung"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp"
-        android:onClick="ergebnisAnzeigen"
+        android:onClick="filterErgebnis"
         android:text="@string/filtern"
         android:textAllCaps="false"
         android:textSize="16sp"

@@ -28,13 +28,13 @@
 
     <ImageView
         android:id="@+id/backAufgabeErstellen"
-        app:srcCompat="@drawable/ic_back"
         android:layout_width="40dp"
         android:layout_height="35dp"
-        android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="10sp"
-        android:onClick="zurueckAufgabeAnzeigen"/>
+        android:onClick="zurueckAufgabeAnzeigen"
+        app:srcCompat="@drawable/ic_back" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -109,12 +109,12 @@
                     android:id="@+id/karmapunkteField"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:digits="0123456789"
                     android:focusableInTouchMode="true"
                     android:focusedByDefault="false"
-                    android:maxLines="1"
-                    android:textSize="18sp"
                     android:inputType="numberDecimal"
-                    android:digits="0123456789"/>
+                    android:maxLines="1"
+                    android:textSize="18sp" />
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 

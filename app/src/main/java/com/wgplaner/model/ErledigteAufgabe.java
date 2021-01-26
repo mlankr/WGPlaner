@@ -2,6 +2,7 @@ package com.wgplaner.model;
 
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
+
 import java.util.Date;
 
 /**
@@ -26,11 +27,12 @@ public class ErledigteAufgabe {
     @DatabaseField(canBeNull = false, foreign = true, useGetSet = true, foreignAutoRefresh = true, columnName = "benutzer")
     private Benutzer benutzer;
 
+    // Default Empty Constructor for ErledigteAufgabe
     public ErledigteAufgabe() {
 
     }
 
-    //Constructor
+    //Constructor for ErledigteAufgabe with Name, Karmapunkte and Benutzer
     public ErledigteAufgabe(String name, int punkte, Benutzer benutzer) {
         this.name = name;
         this.punkte = punkte;
@@ -80,6 +82,7 @@ public class ErledigteAufgabe {
         this.benutzer = benutzer;
     }
 
+    // toString Method to print in Details
     @Override
     public String toString() {
         return "ErledigteAufgabe{" +

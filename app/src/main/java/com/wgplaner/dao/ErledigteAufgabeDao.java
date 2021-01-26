@@ -12,6 +12,7 @@ public class ErledigteAufgabeDao {
     // Database helper class object to get the dao
     private final DBService dbService = DBHelper.getDBService();
 
+    // Create new ErledigteAufgabe using ErledigteAufgabeDao
     public int create(ErledigteAufgabe erledigteAufgabe) {
         try {
             return dbService.getErledigteAufgabeDao().create(erledigteAufgabe);
@@ -21,6 +22,7 @@ public class ErledigteAufgabeDao {
         return 0;
     }
 
+    // Get all ErledigteAufgaben using ErledigteAufgabeDao
     public List<ErledigteAufgabe> getAlle() {
         try {
             return dbService.getErledigteAufgabeDao().queryForAll();

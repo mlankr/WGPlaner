@@ -24,6 +24,7 @@ public class WG {
     @ForeignCollectionField(eager = true)
     private ForeignCollection<Aufgabe> aufgaben;
 
+    // Default Empty Constructor for WG
     public WG() {
 
     }
@@ -35,7 +36,7 @@ public class WG {
         this.aufgaben = aufgaben;
     }
 
-    //Constructor for new WG
+    //Constructor for new WG with Name
     public WG(String name) {
         this.name = name;
     }
@@ -70,6 +71,7 @@ public class WG {
         this.aufgaben = aufgaben;
     }
 
+    // toString Method to print
     @Override
     public String toString() {
         return "WG{" +

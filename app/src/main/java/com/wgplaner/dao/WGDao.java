@@ -12,7 +12,8 @@ public class WGDao {
     // Database helper class object to get the dao
     private final DBService dbService = DBHelper.getDBService();
 
-    public int erstellen(WG wg) {
+    // Create new WG using WGDao
+    public int create(WG wg) {
         try {
             if (getByName(wg.getName()) == null) {
                 return dbService.getWGDao().create(wg);
@@ -25,6 +26,7 @@ public class WGDao {
         return 0;
     }
 
+    // Update WG using WGDao
     public int update(String name) {
         try {
             WG wg = get();
@@ -36,6 +38,7 @@ public class WGDao {
         return 0;
     }
 
+    // Get WG by name using WGDao
     public WG getByName(String name) {
         try {
             List<WG> wgList = dbService.getWGDao().queryForAll();
@@ -50,6 +53,7 @@ public class WGDao {
         return null;
     }
 
+    // Get first created WG using WGDao
     public WG get() {
         try {
             List<WG> wgList = dbService.getWGDao().queryForAll();

@@ -58,6 +58,7 @@ public class Termin {
         this.date = date;
     }
 
+    // toString Method to print
     @Override
     public String toString() {
         return "Termin{" +

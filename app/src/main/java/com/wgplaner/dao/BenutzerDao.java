@@ -14,6 +14,7 @@ public class BenutzerDao {
     // Database helper class object to get the dao
     private final DBService dbService = DBHelper.getDBService();
 
+    // Create new Benutzer using BenutzerDao
     public int create(Benutzer benutzer) {
         try {
             return dbService.getBenutzerDao().create(benutzer);
@@ -23,6 +24,7 @@ public class BenutzerDao {
         return 0;
     }
 
+    // Update Benutzer using BenutzerDao
     public int update(Benutzer benutzer) {
         try {
             return dbService.getBenutzerDao().update(benutzer);
@@ -32,6 +34,7 @@ public class BenutzerDao {
         return 0;
     }
 
+    // Get Benutzer by ID using BenutzerDao
     public Benutzer get(int id) {
         try {
             return dbService.getBenutzerDao().queryForId(id);
@@ -41,21 +44,7 @@ public class BenutzerDao {
         return null;
     }
 
-    public boolean existsByName(String vorname) {
-        List<Benutzer> benutzerList = null;
-        try {
-            benutzerList = dbService.getBenutzerDao().queryForAll();
-            for (Benutzer b : benutzerList) {
-                if (vorname.toLowerCase() == b.getVorname().toLowerCase()) {
-                    return true;
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
+    // Get Benutzer by Email using BenutzerDao
     public Benutzer getByEmail(String email) {
         List<Benutzer> benutzerList = allBenutzer();
         for (Benutzer b : benutzerList) {
@@ -66,6 +55,7 @@ public class BenutzerDao {
         return null;
     }
 
+    // Get All Benutzer using BenutzerDao
     public List<Benutzer> allBenutzer() {
         try {
             return dbService.getBenutzerDao().queryForAll();
@@ -74,16 +64,4 @@ public class BenutzerDao {
         }
         return Collections.emptyList();
     }
-
-    public Benutzer findBenutzer(String name) {
-        List<Benutzer> allBenutzerList = allBenutzer();
-        for (Benutzer b : allBenutzerList) {
-            String fullName = b.getVorname() + " " + b.getNachname();
-            if (fullName.trim().equals(name)) {
-                return b;
-            }
-        }
-        return null;
-    }
-
 }

@@ -34,6 +34,7 @@ public class Aufgabe {
     @DatabaseField(canBeNull = false, foreign = true, useGetSet = true, foreignAutoRefresh = true, columnName = "wg")
     private WG wg;
 
+    // Default Empty Constructor for Aufgabe
     public Aufgabe() {
 
     }
@@ -120,6 +121,7 @@ public class Aufgabe {
         this.wg = wg;
     }
 
+    // toString method for print
     @Override
     public String toString() {
         return "Aufgabe{" +

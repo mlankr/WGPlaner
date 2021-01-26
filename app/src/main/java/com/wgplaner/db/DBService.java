@@ -13,6 +13,7 @@ import com.wgplaner.model.Benutzer;
 import com.wgplaner.model.ErledigteAufgabe;
 import com.wgplaner.model.Termin;
 import com.wgplaner.model.WG;
+
 import java.sql.SQLException;
 
 

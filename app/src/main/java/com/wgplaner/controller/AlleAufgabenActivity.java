@@ -22,15 +22,19 @@ import com.wgplaner.model.Benutzer;
 import java.util.List;
 
 public class AlleAufgabenActivity extends AppCompatActivity {
+    // LinearLayout in Scroll View of this activity as variable
     LinearLayout parentInAlleAufgaben;
 
+    // Components shown in the layout file as member variables
     TextView aufgabeListeTitel;
     TextView punktestand;
     ImageView zurueckInAlleAufgaben;
 
+    // Member variables to know if filter button is pressed and get the Benutzer's Email whose Aufgabe is to be filtered
     boolean isFilterView;
     String filterByEmail;
 
+    // Initialize the Dao objects
     WGDao wgDao = new WGDao();
     BenutzerDao benutzerDao = new BenutzerDao();
     AufgabeDao aufgabeDao = new AufgabeDao();
@@ -40,23 +44,32 @@ public class AlleAufgabenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alle_aufgaben);
 
+        // Initialize all the components shown in the layout file
         aufgabeListeTitel = findViewById(R.id.aufgabeListeTitel);
         punktestand = findViewById(R.id.punktestand);
         parentInAlleAufgaben = findViewById(R.id.parentLayoutAlleAufgaben);
         zurueckInAlleAufgaben = findViewById(R.id.backAlleAufgaben);
 
+        // Retrieve the information passed from intent of previous activity and if filter button was pressed
         Bundle bundle = getIntent().getExtras();
         filterByEmail = bundle.getString("ausgewaehlt");
         isFilterView = !filterByEmail.isEmpty();
+
+        // Method to list the Aufgabe accordingly
         aufgabenListe();
     }
 
+    // Update the Aufgabe list on each resume of this activity
     @Override
     public void onResume() {
         super.onResume();
         aufgabenListe();
     }
 
+    /**
+     * Either show all Aufgaben  with details packed in the newly created Layouts inside the parent LinearLayout of the Scroll View
+     * or show filtered Aufgabe according to the Benutzer selected in the dropdown menu before filter
+     */
     private void aufgabenListe() {
         Benutzer benutzer = benutzerDao.getByEmail(filterByEmail);
         List<Aufgabe> alleAufgabeListe = !isFilterView ? aufgabeDao.allAufgabe() : aufgabeDao.findByBenutzer(benutzer);
@@ -133,7 +146,7 @@ public class AlleAufgabenActivity extends AppCompatActivity {
                     imageView.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            aufgabeBearbeiten(aufgabe.getBezeichnung());
+                            aufgabeBearbeiten(aufgabe.getID());
                         }
                     });
                 }
@@ -141,13 +154,15 @@ public class AlleAufgabenActivity extends AppCompatActivity {
         }
     }
 
+    // Method to redirect on previous page
     public void zurueckAlleAufgaben(View view) {
         super.onBackPressed();
     }
 
-    public void aufgabeBearbeiten(String aufgabeName) {
+    // Launch AlleAufgabenActivity and pass some value using key which is to be retrieved in the upcoming activity
+    public void aufgabeBearbeiten(int aufgabeID) {
         Intent in = new Intent(this, AufgabeBearbeitenActivity.class);
-        in.putExtra("bearbeiten", aufgabeName);
+        in.putExtra("bearbeiten", aufgabeID);
         startActivity(in);
     }
 }

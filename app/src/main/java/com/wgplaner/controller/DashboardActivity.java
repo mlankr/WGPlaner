@@ -1,11 +1,14 @@
 package com.wgplaner.controller;
 
+import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.wgplaner.R;
@@ -15,8 +18,12 @@ import com.wgplaner.db.DBHelper;
 import com.wgplaner.model.Benutzer;
 import com.wgplaner.model.WG;
 
-
+/**
+ * This Activity implements the OnClickListener for the whole view
+ */
 public class DashboardActivity extends AppCompatActivity implements View.OnClickListener {
+
+    // Member variables to be initialized in order to create Admin user by default
     WGDao wgDao;
     BenutzerDao benutzerDao;
     WG wg;
@@ -25,8 +32,11 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+
+        // Initialize DB service
         DBHelper.initDBService(getApplicationContext());
 
+        // Assign all the buttons their respective IDs and set onClickListener to them
         findViewById(R.id.aufgabeAnzeigenButtonDashboard).setOnClickListener(this);
         findViewById(R.id.offeneAufgabenButtonDashboard).setOnClickListener(this);
         findViewById(R.id.karmastatistikButtonDashboard).setOnClickListener(this);
@@ -36,10 +46,12 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         findViewById(R.id.userverwaltugButtonDashboard).setOnClickListener(this);
         findViewById(R.id.abmeldenButtonDashboard).setOnClickListener(this);
 
+        //Initialization of the Dao objects
         wgDao = new WGDao();
         benutzerDao = new BenutzerDao();
     }
 
+    // Create Admin User by Default after WG is created and change the 'WG erstellen' button to 'WG verwalten' on resuming this activity
     @Override
     public void onResume() {
         super.onResume();
@@ -54,13 +66,14 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         }
     }
 
+    // OnClick Method to detect the button pressed and start the new Activity accordingly
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.wgErstellenButtonDashboard) {
             Intent intent = new Intent(this, WGErstellenAndVerwaltenActivity.class);
             startActivity(intent);
         } else if (v.getId() == R.id.abmeldenButtonDashboard) {
-            finish();
+            abmelden(this);
         } else {
             if (wg != null) {
                 if (v.getId() == R.id.aufgabeAnzeigenButtonDashboard) {
@@ -79,11 +92,16 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         }
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        DBHelper.closeDBService();
+    // Show alert dialog box to confirm logout and close DB services if logging out is confirmed
+    public static void abmelden(Activity activity) {
+        new AlertDialog.Builder(activity).setIcon(R.drawable.ic_logout).setTitle("Abmelden").setMessage("Möchten Sie wirklich abmelden?").setPositiveButton("Ja", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int flag) {
+                DBHelper.closeDBService();
+                activity.finishAffinity();
+            }
+        }).setNegativeButton("Nein", null).show();
     }
-
-
 }
+
+
