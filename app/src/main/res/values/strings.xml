@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WGPlaner</string>
+    <string name="app_name">Karmunity</string>
 
     <!--Dashboard Title-->
     <string name="title">Dashboard</string>
@@ -44,7 +44,7 @@
 
 
     <!--Drawer Assets-->
-    <string name="headerText">WG Planer</string>
+    <string name="headerText">Karmunity</string>
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
     <string name="version">version 1.0.0</string>

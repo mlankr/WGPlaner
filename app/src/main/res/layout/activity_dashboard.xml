@@ -29,87 +29,90 @@
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/aufgabeAnzeigenButtonDashboard"
-                android:layout_width="200dp"
-                android:layout_height="70dp"
-                android:layout_marginTop="24dp"
-                android:text="@string/aufgabeAnzeigenButtonDashboard"
-                android:textSize="16sp"
-                app:backgroundTint="@color/blue"
-                app:cornerRadius="15dp" />
 
-            <Button
-                android:id="@+id/offeneAufgabenButtonDashboard"
-                android:layout_width="200dp"
-                android:layout_height="70dp"
-                android:layout_marginTop="24dp"
-                android:text="@string/offeneAufgabenButtonDashboard"
-                android:textSize="16sp"
-                app:backgroundTint="@color/blue"
-                app:cornerRadius="15dp" />
+                <Button
+                    android:id="@+id/aufgabeAnzeigenButtonDashboard"
+                    android:layout_width="210dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_weight="1"
+                    android:text="@string/aufgabeAnzeigenButtonDashboard"
+                    android:textSize="16sp"
+                    app:backgroundTint="@color/blue"
+                    app:cornerRadius="15dp" />
 
-            <Button
-                android:id="@+id/karmastatistikButtonDashboard"
-                android:layout_width="200dp"
-                android:layout_height="70dp"
-                android:layout_marginTop="24dp"
-                android:text="@string/karmastatistikButtonDashboard"
-                android:textSize="16sp"
-                app:backgroundTint="@color/blue"
-                app:cornerRadius="15dp" />
+                <Button
+                    android:id="@+id/offeneAufgabenButtonDashboard"
+                    android:layout_width="210dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_weight="1"
+                    android:text="@string/offeneAufgabenButtonDashboard"
+                    android:textSize="16sp"
+                    app:backgroundTint="@color/blue"
+                    app:cornerRadius="15dp" />
 
-            <Button
-                android:id="@+id/einkauflisteAnzeigenButtonDashboard"
-                android:layout_width="200dp"
-                android:layout_height="70dp"
-                android:layout_marginTop="24dp"
-                android:text="@string/einkauflisteAnzeigenButtonDashboard"
-                android:textSize="16sp"
-                app:backgroundTint="@color/blue"
-                app:cornerRadius="15dp" />
+                <Button
+                    android:id="@+id/karmastatistikButtonDashboard"
+                    android:layout_width="210dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/karmastatistikButtonDashboard"
+                    android:textSize="16sp"
+                    app:backgroundTint="@color/blue"
+                    app:cornerRadius="15dp" />
 
-            <Button
-                android:id="@+id/wgErstellenButtonDashboard"
-                android:layout_width="200dp"
-                android:layout_height="70dp"
-                android:layout_marginTop="24dp"
-                android:text="@string/wgErstellenButtonDashboard"
-                android:textSize="16sp"
-                app:backgroundTint="@color/blue"
-                app:cornerRadius="15dp" />
+                <Button
+                    android:id="@+id/einkauflisteAnzeigenButtonDashboard"
+                    android:layout_width="210dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/einkauflisteAnzeigenButtonDashboard"
+                    android:textSize="16sp"
+                    app:backgroundTint="@color/blue"
+                    app:cornerRadius="15dp" />
+
+                <Button
+                    android:id="@+id/wgErstellenButtonDashboard"
+                    android:layout_width="210dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/wgErstellenButtonDashboard"
+                    android:textSize="16sp"
+                    app:backgroundTint="@color/blue"
+                    app:cornerRadius="15dp" />
 
 
-            <Button
-                android:id="@+id/kontoLoeschenButtonDashboard"
-                android:layout_width="200dp"
-                android:layout_height="70dp"
-                android:layout_marginTop="24dp"
-                android:text="@string/kontoLoeschenButtonDashboard"
-                android:textSize="16sp"
-                app:backgroundTint="@color/blue"
-                app:cornerRadius="15dp" />
+                <Button
+                    android:id="@+id/kontoLoeschenButtonDashboard"
+                    android:layout_width="210dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/kontoLoeschenButtonDashboard"
+                    android:textSize="16sp"
+                    app:backgroundTint="@color/blue"
+                    app:cornerRadius="15dp" />
 
-            <Button
-                android:id="@+id/userverwaltugButtonDashboard"
-                android:layout_width="200dp"
-                android:layout_height="70dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/userverwaltugButtonDashboard"
-                android:textSize="16sp"
-                app:backgroundTint="@color/blue"
-                app:cornerRadius="15dp" />
+                <Button
+                    android:id="@+id/userverwaltugButtonDashboard"
+                    android:layout_width="210dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/userverwaltugButtonDashboard"
+                    android:textSize="16sp"
+                    app:backgroundTint="@color/blue"
+                    app:cornerRadius="15dp" />
 
-            <Button
-                android:id="@+id/abmeldenButtonDashboard"
-                android:layout_width="200dp"
-                android:layout_height="70dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="20dp"
-                android:text="@string/abmeldenButtonDashboard"
-                android:textSize="16sp"
-                app:backgroundTint="@color/blue"
-                app:cornerRadius="15dp" />
+                <Button
+                    android:id="@+id/abmeldenButtonDashboard"
+                    android:layout_width="210dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/abmeldenButtonDashboard"
+                    android:textSize="16sp"
+                    app:backgroundTint="@color/blue"
+                    app:cornerRadius="15dp" />
 
         </LinearLayout>
     </ScrollView>

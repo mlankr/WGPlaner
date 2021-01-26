@@ -52,7 +52,7 @@
 
     <Button
         android:id="@+id/filternButton"
-        android:layout_width="170dp"
+        android:layout_width="180dp"
         android:layout_height="70dp"
         android:layout_below="@id/aufgabeZuordnung"
         android:layout_centerHorizontal="true"
@@ -66,7 +66,7 @@
 
     <Button
         android:id="@+id/aufgabeErstellenButton"
-        android:layout_width="170dp"
+        android:layout_width="180dp"
         android:layout_height="70dp"
         android:layout_below="@id/filternButton"
         android:layout_centerHorizontal="true"
@@ -82,7 +82,7 @@
 
     <Button
         android:id="@+id/alleAufgaben"
-        android:layout_width="170dp"
+        android:layout_width="180dp"
         android:layout_height="70dp"
         android:layout_below="@id/aufgabeErstellenButton"
         android:layout_centerHorizontal="true"
